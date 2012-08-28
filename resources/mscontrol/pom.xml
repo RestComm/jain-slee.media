@@ -78,14 +78,15 @@
             </plugin>
         </plugins>
     </build>
+    
     <profiles>
         <profile>
             <id>release</id>
             <modules>
                 <module>docs</module>
                 <module>release</module>
-            </modules>
-        </profile>
+            </modules>            
+        </profile>        
         <profile>
             <id>maven-release</id>
             <modules>

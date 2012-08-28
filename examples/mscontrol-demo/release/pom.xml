@@ -14,9 +14,6 @@
 	<profiles>
 		<profile>
 			<id>release</id>
-			<properties>
-				<release.dir>${basedir}/../../../release/${release.name}/examples/mscontrol-demo</release.dir>
-			</properties>
 			<build>
 				<plugins>
 					<plugin>
@@ -30,7 +27,7 @@
 								</goals>
 								<configuration>
 									<tasks>
-										<copy overwrite="true" todir="${release.dir}">
+										<copy overwrite="true" todir="${release.dir}/examples/mscontrol-demo">
 											<fileset dir="${basedir}/../du/target">
 												<include name="**.jar" />
 												<include name="*.xml" />
@@ -38,10 +35,10 @@
 											</fileset>
 										</copy>
 
-										<copy overwrite="true" file="${basedir}/../web/target/mscontrol-audio.war" todir="${release.dir}" />
-										<copy overwrite="true" file="${basedir}/../du/target/build.xml" tofile="${release.dir}/du-management.xml" />
+										<copy overwrite="true" file="${basedir}/../web/target/mscontrol-audio.war" todir="${release.dir}/examples/mscontrol-demo" />
+										<copy overwrite="true" file="${basedir}/../du/target/build.xml" tofile="${release.dir}/examples/mscontrol-demo/du-management.xml" />
 
-										<copy overwrite="true" file="${basedir}/build.xml" todir="${release.dir}">
+										<copy overwrite="true" file="${basedir}/build.xml" todir="${release.dir}/examples/mscontrol-demo">
 											<filterset>
 												<filter token="JBOSS.PATH" value="${jboss.path}" />
 												<filter token="JBOSS.CONFIG" value="${node}" />

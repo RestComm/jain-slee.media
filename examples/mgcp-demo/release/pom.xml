@@ -14,10 +14,7 @@
 
 	<profiles>
 	    <profile>
-		    <id>release</id>
-		    <properties>
-			    <release.dir>${basedir}/../../../release/${release.name}/examples/mgcp-demo</release.dir>
-		    </properties>
+		    <id>release</id>		    
 		    <build>
 			    <plugins>
 				    <plugin>
@@ -31,7 +28,7 @@
 							    </goals>
 							    <configuration>
 								    <tasks>
-									    <copy overwrite="true" todir="${release.dir}">
+									    <copy overwrite="true" todir="${release.dir}/examples/mgcp-demo">
 										<fileset dir="${basedir}/../slee/services-du/target">
 										<include name="**.jar" />
 										<include name="*.xml" />
@@ -39,12 +36,12 @@
 									</fileset>
 								</copy>
 								
-								<copy overwrite="true" file="${basedir}/../web/target/mgcp-demo-audio.war" todir="${release.dir}" />
-								<copy overwrite="true" file="${basedir}/../slee/services-du/target/build.xml" tofile="${release.dir}/du-management.xml" />
+								<copy overwrite="true" file="${basedir}/../web/target/mgcp-demo-audio.war" todir="${release.dir}/examples/mgcp-demo" />
+								<copy overwrite="true" file="${basedir}/../slee/services-du/target/build.xml" tofile="${release.dir}/examples/mgcp-demo/du-management.xml" />
 								
-								<copy overwrite="true" file="${basedir}/../README.txt" tofile="${release.dir}/README.txt" />
+								<copy overwrite="true" file="${basedir}/../README.txt" tofile="${release.dir}/examples/mgcp-demo/README.txt" />
 								
-								<copy overwrite="true" file="${basedir}/build.xml" todir="${release.dir}">
+								<copy overwrite="true" file="${basedir}/build.xml" todir="${release.dir}/examples/mgcp-demo">
 									<filterset>
 										<filter token="JBOSS.PATH" value="${jboss.path}" />
 										<filter token="JBOSS.CONFIG" value="${node}" />
