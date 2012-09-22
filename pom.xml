@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.mobicents</groupId>
 		<artifactId>mobicents-parent</artifactId>
-		<version>2.23-SNAPSHOT</version>
+		<version>6.1.2.GA-TelScale</version>
 	</parent>
 	
 	<groupId>org.mobicents.servers.jainslee.media</groupId>
@@ -13,23 +13,26 @@
 			
 	<packaging>pom</packaging>
 	
-	<modules>
-		<module>resources/mgcp</module>
-		<module>resources/mscontrol</module>
-		<module>examples/mgcp-demo</module>
-		<module>examples/mscontrol-demo</module>
-		<module>examples/call-controller2</module>
-	</modules>
-		
 	<scm>
 		<connection>scm:git:https://code.google.com/p/jain-slee.media/</connection>
 		<developerConnection>scm:git:https://code.google.com/p/jain-slee.media/</developerConnection>
 		<url>https://code.google.com/p/jain-slee.media/</url>
 	</scm>     
+	
+	<modules>
+		<!-- modules are defined on profiles -->
+	</modules>
 			
 	<profiles>
 		<profile>
 			<id>maven-release</id>
+			<modules>
+				<module>resources/mgcp</module>
+				<module>resources/mscontrol</module>
+				<module>examples/mgcp-demo</module>
+				<module>examples/mscontrol-demo</module>
+				<module>examples/call-controller2</module>
+			</modules>
 			<build>
 				<plugins>
 					<plugin>
@@ -42,6 +45,13 @@
 					</plugin>
 				</plugins>
 			</build>		
+		</profile>
+		<profile>
+			<id>release</id>
+			<modules>
+				<module>resources/mgcp</module>
+				<module>examples/mgcp-demo</module>				
+			</modules>			
 		</profile>
 	</profiles>	
 	
