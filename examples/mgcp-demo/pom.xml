@@ -19,8 +19,7 @@
     </modules>
     
 	<properties>
-		<mobicents.resources.sip11.version>2.6.0.FINAL</mobicents.resources.sip11.version>
-		<mobicents.resources.mgcp.version>2.4.0.FINAL</mobicents.resources.mgcp.version>
+		<mobicents.resources.sip11.version>6.1.1.GA-TelScale</mobicents.resources.sip11.version>
 	</properties>
 	
 	<dependencyManagement>
@@ -33,7 +32,7 @@
 			<dependency>
 				<groupId>org.mobicents.resources</groupId>
 				<artifactId>mgcp-ratype</artifactId>
-				<version>${mobicents.resources.mgcp.version}</version>
+				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>	

@@ -11,8 +11,8 @@
 	</parent>
 
 	<properties>
-		<mobicents.resources.sip11.version>2.6.0.FINAL</mobicents.resources.sip11.version>
-		<mobicents.resources.mscontrol.version>1.0.0.BETA1</mobicents.resources.mscontrol.version>		
+		<mobicents.resources.sip11.version>6.1.1.GA-TelScale</mobicents.resources.sip11.version>
+		<mobicents.resources.mscontrol.version>${project.version}</mobicents.resources.mscontrol.version>		
 		<docs.example.name>MS Control Demo</docs.example.name>
 		<docs.example.dirname>mscontrol-demo</docs.example.dirname>
 		<docs.bookid>MSControlDemo</docs.bookid>
@@ -39,7 +39,7 @@
 			<dependency>
 				<groupId>org.mobicents.resources.mscontrol</groupId>
 				<artifactId>mobicents-slee-ra-mscontrol-ratype</artifactId>
-				<version>${mobicents.resources.mscontrol.version}</version>
+				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

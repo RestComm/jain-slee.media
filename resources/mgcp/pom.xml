@@ -22,11 +22,20 @@
 	</modules>
 	
 	<properties>
-		<docs.profile>mobicents</docs.profile>
 		<docs.ra.name>MGCP</docs.ra.name>
 		<docs.ra.dirname>mgcp</docs.ra.dirname>
 		<docs.bookid>MGCP</docs.bookid>
 	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.mobicents.protocols.mgcp</groupId>
+				<artifactId>mgcp-impl</artifactId>
+				<version>2.0.1.GA</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 		
 	<profiles>
 		<profile>
