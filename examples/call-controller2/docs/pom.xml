@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>call-controller2-example-parent</artifactId>
 		<groupId>org.mobicents.examples</groupId>
-		<version>6.1.1.GA-TelScale</version>
+		<version>6.1.2-TelScale-SNAPSHOT</version>
 	</parent>
 	
 	<artifactId>mobicents-slee-example-call-contorller2-docs</artifactId>
