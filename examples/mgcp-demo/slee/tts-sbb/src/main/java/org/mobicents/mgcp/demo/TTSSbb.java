@@ -290,7 +290,7 @@ public abstract class TTSSbb implements Sbb {
 		RequestedAction[] actions = new RequestedAction[] { RequestedAction.NotifyImmediately };
 
 		RequestedEvent[] requestedEvents = {
-				new RequestedEvent(new EventName(AUPackage.AU, AuMgcpEvent.auoc/* , connectionIdentifier */), actions),
+				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auoc/* , connectionIdentifier */), actions),
 				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auof/* , connectionIdentifier */), actions),
 				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.factory("0")/* , connectionIdentifier */), actions),
 				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.factory("1")/* , connectionIdentifier */), actions),
@@ -348,7 +348,7 @@ public abstract class TTSSbb implements Sbb {
 		//TODO: update this to makeit work!!
 		ttsText = "ts("+ttsText+") vc("+voice+")";
 		//ConnectionIdentifier connectionIdentifier = new ConnectionIdentifier(this.getConnectionIdentifier());
-		EventName[] signalRequests = { new EventName(AUPackage.AU, AUMgcpEvent.pa.withParm(ttsText) /*,connectionIdentifier*/) };
+		EventName[] signalRequests = { new EventName(AUPackage.AU, AUMgcpEvent.aupa.withParm(ttsText) /*,connectionIdentifier*/) };
 		notificationRequest.setSignalRequests(signalRequests);
 
 		RequestedAction[] actions = new RequestedAction[] { RequestedAction.NotifyImmediately };
