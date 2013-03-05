@@ -96,6 +96,7 @@ import net.java.slee.resource.sip.SipActivityContextInterfaceFactory;
 import net.java.slee.resource.sip.SleeSipProvider;
 
 import org.mobicents.protocols.mgcp.jain.pkg.AUPackage;
+import org.mobicents.protocols.mgcp.jain.pkg.AUMgcpEvent;
 
 /**
  * 
@@ -257,15 +258,15 @@ public abstract class RecorderSbb implements Sbb {
 		NotificationRequest notificationRequest = new NotificationRequest(this, endpointID, mgcpProvider
 				.getUniqueRequestIdentifier());
 		//ConnectionIdentifier connectionIdentifier = new ConnectionIdentifier(this.getConnectionIdentifier());
-		EventName[] signalRequests = { new EventName(AUPackage.AU, MgcpEvent.factory("pa").withParm("an="+mediaPath)
+		EventName[] signalRequests = { new EventName(AUPackage.AU, AUMgcpEvent.aupa.withParm("an="+mediaPath)
 				/*, connectionIdentifier*/) };
 		notificationRequest.setSignalRequests(signalRequests);
 
 		RequestedAction[] actions = new RequestedAction[] { RequestedAction.NotifyImmediately };
 
 		RequestedEvent[] requestedEvents = {
-				new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.oc/*, connectionIdentifier*/), actions),
-				new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.of/*, connectionIdentifier*/), actions), };
+				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auoc/*, connectionIdentifier*/), actions),
+				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auof/*, connectionIdentifier*/), actions), };
 
 		notificationRequest.setRequestedEvents(requestedEvents);
 		notificationRequest.setTransactionHandle(mgcpProvider.getUniqueTransactionHandler());
@@ -368,7 +369,7 @@ public abstract class RecorderSbb implements Sbb {
 
 					//ConnectionIdentifier connId = new ConnectionIdentifier(this.getConnectionIdentifier());
 
-					EventName[] signalRequests = { new EventName(AUPackage.AU, MgcpEvent.factory("pr")
+					EventName[] signalRequests = { new EventName(AUPackage.AU, AUMgcpEvent.aupr
 							.withParm("ri="+getFileURL("recorded.wav")+" oa=true")/*, connId*/) };
 					notificationRequest.setSignalRequests(signalRequests);
 

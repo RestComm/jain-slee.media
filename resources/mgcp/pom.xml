@@ -9,8 +9,7 @@
 	</parent>
 
 	<artifactId>mgcp-parent</artifactId>
-	<groupId>org.mobicents.resources</groupId>
-
+        <groupId>org.mobicents.resources</groupId>	
 	<packaging>pom</packaging>
 
 	<modules>

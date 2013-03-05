@@ -11,4 +11,10 @@
 	<artifactId>mgcp-demo-custom-events</artifactId>
 	<name>MGCP Demo Custom Event</name>
 
+	<dependencies>
+            <dependency>
+                    <artifactId>mgcp-ratype</artifactId>
+                    <groupId>org.mobicents.resources</groupId>
+            </dependency>
+        </dependencies>
 </project>

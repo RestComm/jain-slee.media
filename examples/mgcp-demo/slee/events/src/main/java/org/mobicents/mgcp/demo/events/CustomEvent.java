@@ -25,10 +25,14 @@ package org.mobicents.mgcp.demo.events;
 import java.io.Serializable;
 import java.util.Random;
 
+import jain.protocol.ip.mgcp.message.parms.CallIdentifier;
+import jain.protocol.ip.mgcp.message.parms.ConnectionIdentifier;
+import jain.protocol.ip.mgcp.message.parms.EndpointIdentifier;
 /**
  * CustomEvent to communicate between SBB Entities belonging to different Services
  * 
  * @author amit bhayani
+ * @author yulian oifa 
  * 
  */
 public class CustomEvent implements Serializable {
@@ -39,13 +43,15 @@ public class CustomEvent implements Serializable {
 
 	private long id;
 
-	private String endpointName;
-	private String callId;
+	private EndpointIdentifier endpointID;
+	private ConnectionIdentifier connectionID;
+	private CallIdentifier callID;
 
-	public CustomEvent(String endpointName, String callId) {
+	public CustomEvent(EndpointIdentifier endpointID,ConnectionIdentifier connectionID,CallIdentifier callID) {
 		id = new Random().nextLong() ^ System.currentTimeMillis();
-		this.endpointName = endpointName;
-		this.callId = callId;
+		this.endpointID = endpointID;
+		this.connectionID=connectionID;
+		this.callID = callID;
 	}
 
 	public boolean equals(Object o) {
@@ -60,12 +66,16 @@ public class CustomEvent implements Serializable {
 		return (int) id;
 	}
 
-	public String getEndpointName() {
-		return endpointName;
+	public EndpointIdentifier getEndpointID() {
+		return endpointID;
 	}
 	
-	public String getCallId(){
-		return this.callId;
+	public ConnectionIdentifier getConnectionID() {
+		return connectionID;
+	}
+	
+	public CallIdentifier getCallID(){
+		return this.callID;
 	}
 
 }
