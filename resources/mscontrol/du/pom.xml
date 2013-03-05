@@ -14,22 +14,22 @@
     <dependencies>
         <dependency>
             <groupId>${pom.groupId}</groupId>
-			<artifactId>mobicents-slee-ra-mscontrol-events</artifactId>
+			<artifactId>mscontrol-events</artifactId>
             <version>${pom.version}</version>
         </dependency>
         <dependency>
             <groupId>${pom.groupId}</groupId>
-            <artifactId>mobicents-slee-ra-mscontrol-library</artifactId>
+            <artifactId>mscontrol-library</artifactId>
             <version>${pom.version}</version>
         </dependency>
         <dependency>
             <groupId>${pom.groupId}</groupId>
-			<artifactId>mobicents-slee-ra-mscontrol-ratype</artifactId>
+			<artifactId>mscontrol-ratype</artifactId>
             <version>${pom.version}</version>
         </dependency>
         <dependency>
             <groupId>${pom.groupId}</groupId>
-			<artifactId>mobicents-slee-ra-mscontrol-ra</artifactId>
+			<artifactId>mscontrol-ra</artifactId>
             <version>${pom.version}</version>
         </dependency>
     </dependencies>
