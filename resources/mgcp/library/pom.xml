@@ -16,8 +16,14 @@
 			<artifactId>jain-mgcp-ri</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.mobicents.protocols.mgcp</groupId>
-			<artifactId>mgcp-impl</artifactId>
+			<groupId>org.mobicents.media.client</groupId>
+			<artifactId>mgcp-driver</artifactId>
+			<version>3.0.0.CR2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mobicents.media</groupId>
+			<artifactId>concurrent</artifactId>
+			<version>3.0.0.CR2</version>
 		</dependency>
 	</dependencies>
 	

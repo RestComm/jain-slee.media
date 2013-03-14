@@ -1,14 +1,10 @@
 # SLEE
+${env.JBOSS_HOME}
 ${release.dir}
-examples/call-controller2/docs/sources-mobicents/src/
 examples/call-controller2/docs/sources-telscale/src/
-examples/mgcp-demo/docs/sources-mobicents/src/
 examples/mgcp-demo/docs/sources-telscale/src/
-examples/mscontrol-demo/docs/sources-mobicents/src/
 examples/mscontrol-demo/docs/sources-telscale/src/
-resources/mgcp/docs/sources-mobicents/src/
 resources/mgcp/docs/sources-telscale/src/
-resources/mscontrol/docs/sources-mobicents/src/
 resources/mscontrol/docs/sources-telscale/src/
 
 # Java compiled #

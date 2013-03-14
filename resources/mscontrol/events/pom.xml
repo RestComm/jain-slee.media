@@ -10,6 +10,15 @@
 	<artifactId>mobicents-slee-ra-mscontrol-events</artifactId>
 
 	<name>Mobicents :: Resources :: ${pom.artifactId}</name>
+	
+	<dependencies>
+        <dependency>
+            <groupId>${pom.groupId}</groupId>
+			<artifactId>mobicents-slee-ra-mscontrol-library</artifactId>
+            <version>${pom.version}</version>
+        </dependency>
+    </dependencies>
+    
 	<build>
 		<resources>
 			<resource>

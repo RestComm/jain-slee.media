@@ -10,36 +10,15 @@
 	<artifactId>mobicents-slee-ra-mscontrol-ra</artifactId>
 
 	<name>Mobicents :: Resources :: ${pom.artifactId}</name>
+	
 	<dependencies>
-		<dependency>
-			<groupId>org.mobicents.jsr309</groupId>
-			<artifactId>mobicents-jsr309-impl</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mobicents.external.jsr309</groupId>
-			<artifactId>mscontrol</artifactId>
-		</dependency>
-		<dependency>
+        <dependency>
             <groupId>${pom.groupId}</groupId>
 			<artifactId>mobicents-slee-ra-mscontrol-ratype</artifactId>
             <version>${pom.version}</version>
         </dependency>
-        <dependency>
-            <groupId>${pom.groupId}</groupId>
-			<artifactId>mobicents-slee-ra-mscontrol-events</artifactId>
-            <version>${pom.version}</version>
-        </dependency>
-		<dependency>
-			<groupId>javax.slee</groupId>
-			<artifactId>jain-slee</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>concurrent</groupId>
-			<artifactId>concurrent</artifactId>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
+    </dependencies>
+    
 	<build>
 		<resources>
 			<resource>

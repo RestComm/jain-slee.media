@@ -11,16 +11,19 @@
 	<artifactId>mobicents-slee-ra-mscontrol-ratype</artifactId>
 
     <name>Mobicents :: Resources :: ${pom.artifactId}</name>
+    
     <dependencies>
         <dependency>
             <groupId>javax.slee</groupId>
             <artifactId>jain-slee</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.mobicents.external.jsr309</groupId>
-            <artifactId>mscontrol</artifactId>
+            <groupId>${pom.groupId}</groupId>
+			<artifactId>mobicents-slee-ra-mscontrol-events</artifactId>
+            <version>${pom.version}</version>
         </dependency>
     </dependencies>
+    
     <build>
         <resources>
             <resource>
