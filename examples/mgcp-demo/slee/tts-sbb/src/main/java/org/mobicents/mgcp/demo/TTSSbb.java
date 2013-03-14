@@ -86,6 +86,7 @@ import javax.slee.UnrecognizedActivityException;
 import javax.slee.facilities.Tracer;
 
 import org.mobicents.protocols.mgcp.jain.pkg.AUPackage;
+import org.mobicents.protocols.mgcp.jain.pkg.AUMgcpEvent;
 
 import net.java.slee.resource.mgcp.JainMgcpProvider;
 import net.java.slee.resource.mgcp.MgcpActivityContextInterfaceFactory;
@@ -283,14 +284,14 @@ public abstract class TTSSbb implements Sbb {
 		
 		//ConnectionIdentifier connectionIdentifier = new ConnectionIdentifier(this.getConnectionIdentifier());
 		
-		EventName[] signalRequests = { new EventName(AUPackage.AU, MgcpEvent.factory("pa").withParm("an="+mediaPath/*+" mn=1"*/)/* , connectionIdentifier */) };
+		EventName[] signalRequests = { new EventName(AUPackage.AU, AUMgcpEvent.aupa.withParm("an="+mediaPath/*+" mn=1"*/)/* , connectionIdentifier */) };
 		notificationRequest.setSignalRequests(signalRequests);
 
 		RequestedAction[] actions = new RequestedAction[] { RequestedAction.NotifyImmediately };
 
 		RequestedEvent[] requestedEvents = {
-				new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.oc/* , connectionIdentifier */), actions),
-				new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.of/* , connectionIdentifier */), actions),
+				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auoc/* , connectionIdentifier */), actions),
+				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auof/* , connectionIdentifier */), actions),
 				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.factory("0")/* , connectionIdentifier */), actions),
 				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.factory("1")/* , connectionIdentifier */), actions),
 				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.factory("2")/* , connectionIdentifier */), actions),
@@ -347,14 +348,14 @@ public abstract class TTSSbb implements Sbb {
 		//TODO: update this to makeit work!!
 		ttsText = "ts("+ttsText+") vc("+voice+")";
 		//ConnectionIdentifier connectionIdentifier = new ConnectionIdentifier(this.getConnectionIdentifier());
-		EventName[] signalRequests = { new EventName(AUPackage.AU, MgcpEvent.factory("pa").withParm(ttsText) /*,connectionIdentifier*/) };
+		EventName[] signalRequests = { new EventName(AUPackage.AU, AUMgcpEvent.aupa.withParm(ttsText) /*,connectionIdentifier*/) };
 		notificationRequest.setSignalRequests(signalRequests);
 
 		RequestedAction[] actions = new RequestedAction[] { RequestedAction.NotifyImmediately };
 
 		RequestedEvent[] requestedEvents = {
-				new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.oc/* , connectionIdentifier */), actions),
-				new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.of/* , connectionIdentifier */), actions),
+				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auoc/* , connectionIdentifier */), actions),
+				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auof/* , connectionIdentifier */), actions),
 				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.factory("0")/* , connectionIdentifier */), actions),
 				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.factory("1")/* , connectionIdentifier */), actions),
 				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.factory("2")/* , connectionIdentifier */), actions),

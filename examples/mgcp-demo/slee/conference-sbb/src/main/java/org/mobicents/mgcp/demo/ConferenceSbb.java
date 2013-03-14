@@ -37,15 +37,27 @@ package org.mobicents.mgcp.demo;
 
 import jain.protocol.ip.mgcp.JainMgcpEvent;
 import jain.protocol.ip.mgcp.message.CreateConnection;
+import jain.protocol.ip.mgcp.message.ModifyConnection;
 import jain.protocol.ip.mgcp.message.CreateConnectionResponse;
+import jain.protocol.ip.mgcp.message.ModifyConnectionResponse;
 import jain.protocol.ip.mgcp.message.DeleteConnection;
+import jain.protocol.ip.mgcp.message.NotificationRequest;
 import jain.protocol.ip.mgcp.message.parms.CallIdentifier;
 import jain.protocol.ip.mgcp.message.parms.ConflictingParameterException;
 import jain.protocol.ip.mgcp.message.parms.ConnectionDescriptor;
 import jain.protocol.ip.mgcp.message.parms.ConnectionIdentifier;
 import jain.protocol.ip.mgcp.message.parms.ConnectionMode;
+import jain.protocol.ip.mgcp.message.parms.EventName;
+import jain.protocol.ip.mgcp.message.parms.NotifiedEntity;
+import jain.protocol.ip.mgcp.message.parms.RequestedAction;
+import jain.protocol.ip.mgcp.message.parms.RequestedEvent;
 import jain.protocol.ip.mgcp.message.parms.EndpointIdentifier;
 import jain.protocol.ip.mgcp.message.parms.ReturnCode;
+import jain.protocol.ip.mgcp.pkg.MgcpEvent;
+import jain.protocol.ip.mgcp.pkg.PackageName;
+
+import org.mobicents.protocols.mgcp.jain.pkg.AUPackage;
+import org.mobicents.protocols.mgcp.jain.pkg.AUMgcpEvent;
 
 import java.text.ParseException;
 import java.util.HashMap;
@@ -81,6 +93,7 @@ import javax.slee.facilities.Tracer;
 import net.java.slee.resource.mgcp.JainMgcpProvider;
 import net.java.slee.resource.mgcp.MgcpActivityContextInterfaceFactory;
 import net.java.slee.resource.mgcp.MgcpConnectionActivity;
+import net.java.slee.resource.mgcp.MgcpEndpointActivity;
 import net.java.slee.resource.sip.DialogActivity;
 import net.java.slee.resource.sip.SipActivityContextInterfaceFactory;
 import net.java.slee.resource.sip.SleeSipProvider;
@@ -90,12 +103,17 @@ import org.mobicents.mgcp.demo.events.CustomEvent;
 /**
  * 
  * @author amit bhayani
+ * @author yulian oifa
  */
 public abstract class ConferenceSbb implements Sbb {
 
 	public final static String JBOSS_BIND_ADDRESS = System.getProperty("jboss.bind.address", "127.0.0.1");
 
 	public final static String ENDPOINT_NAME = "mobicents/cnf/$";
+
+	public final static String IVR_ENDPOINT_NAME = "mobicents/ivr/$";
+	
+	public final static String SONG = "http://" + JBOSS_BIND_ADDRESS + ":8080/mgcpdemo/audio/ulaw-fashion.wav";
 
 	public static final int MGCP_PEER_PORT = 2427;
 	public static final int MGCP_PORT = 2727;
@@ -200,84 +218,158 @@ public abstract class ConferenceSbb implements Sbb {
 	public void onCreateConnectionResponse(CreateConnectionResponse event, ActivityContextInterface aci) {
 		logger.info("Receive CRCX response: \n" + event);
 
+		Request request = null;
 		ServerTransaction txn = null;
 		HashMap fromVsConnIdMap = this.getFromVsConnIdMap();
-		Iterator itr = fromVsConnIdMap.keySet().iterator();
-		while (itr.hasNext()) {
-			String fromUri = (String) itr.next();
-			Object obj = fromVsConnIdMap.get(fromUri);
+		if(getEndpointIdentifier()==null || this.getIVREndpointIdentifier()!=null)
+		{			
+			Iterator itr = fromVsConnIdMap.keySet().iterator();
+			while (itr.hasNext()) {
+				String fromUri = (String) itr.next();
+				Object obj = fromVsConnIdMap.get(fromUri);
 
-			if (obj instanceof Integer) {
-				int txId = (Integer) obj;
-				if (event.getTransactionHandle() == txId) {
-					txn = this.getTxIdVsServerTxMap().remove(txId);
-					fromVsConnIdMap.put(fromUri, event.getConnectionIdentifier());
-					break;
+				if (obj instanceof Integer) {
+					int txId = (Integer) obj;
+					if (event.getTransactionHandle() == txId) {
+						txn = this.getTxIdVsServerTxMap().remove(txId);
+						fromVsConnIdMap.put(fromUri, event.getConnectionIdentifier());
+						break;
+					}
 				}
 			}
+
+			request = txn.getRequest();
 		}
-
-		Request request = txn.getRequest();
-
+		
 		ReturnCode status = event.getReturnCode();
 
 		switch (status.getValue()) {
 		case ReturnCode.TRANSACTION_EXECUTED_NORMALLY:
+			if(getEndpointIdentifier()==null || this.getIVREndpointIdentifier()!=null)
+			{			
+				//initial connection request
+				this.setEndpointIdentifier(event.getSpecificEndpointIdentifier());
+				
+				String sdp = event.getLocalConnectionDescriptor().toString();
 
-			this.setEndpointIdentifier(event.getSpecificEndpointIdentifier());
-
-			String sdp = event.getLocalConnectionDescriptor().toString();
-
-			ContentTypeHeader contentType = null;
-			try {
-				contentType = headerFactory.createContentTypeHeader("application", "sdp");
-			} catch (ParseException ex) {
-				ex.printStackTrace();
-			}
-
-			String localAddress = provider.getListeningPoints()[0].getIPAddress();
-			int localPort = provider.getListeningPoints()[0].getPort();
-
-			Address contactAddress = null;
-			try {
-				contactAddress = addressFactory.createAddress("sip:" + localAddress + ":" + localPort);
-			} catch (ParseException ex) {
-				ex.printStackTrace();
-			}
-			ContactHeader contact = headerFactory.createContactHeader(contactAddress);
-
-			Response response = null;
-			try {
-				response = messageFactory.createResponse(Response.OK, request, contentType, sdp.getBytes());
-			} catch (ParseException ex) {
-				ex.printStackTrace();
-			}
-
-			response.setHeader(contact);
-			try {
-				txn.sendResponse(response);
-
-				if (fromVsConnIdMap.size() == 1) {
-					CustomEvent cutEvent = new CustomEvent(this.getEndpointIdentifier().getLocalEndpointName(), this
-							.getCallIdentifier().toString());
-					fireConferenceInitiate(cutEvent, aci, null);
+				ContentTypeHeader contentType = null;
+				try {
+					contentType = headerFactory.createContentTypeHeader("application", "sdp");
+				} catch (ParseException ex) {
+					ex.printStackTrace();
 				}
-			} catch (InvalidArgumentException ex) {
-				ex.printStackTrace();
-			} catch (SipException ex) {
-				ex.printStackTrace();
+
+				String localAddress = provider.getListeningPoints()[0].getIPAddress();
+				int localPort = provider.getListeningPoints()[0].getPort();
+
+				Address contactAddress = null;
+				try {
+					contactAddress = addressFactory.createAddress("sip:" + localAddress + ":" + localPort);
+				} catch (ParseException ex) {
+					ex.printStackTrace();
+				}
+				ContactHeader contact = headerFactory.createContactHeader(contactAddress);
+
+				Response response = null;
+				try {
+					response = messageFactory.createResponse(Response.OK, request, contentType, sdp.getBytes());
+				} catch (ParseException ex) {
+					ex.printStackTrace();
+				}
+
+				response.setHeader(contact);
+				try {
+					txn.sendResponse(response);				
+				} catch (InvalidArgumentException ex) {
+					ex.printStackTrace();
+				} catch (SipException ex) {
+					ex.printStackTrace();
+				}
+				
+				CustomEvent cutEvent = new CustomEvent(this.getEndpointIdentifier(),event.getConnectionIdentifier(), this.getCallIdentifier());
+				fireConferenceInitiate(cutEvent, aci, null);
+					
+				if (fromVsConnIdMap.size() == 2) {
+					//lets stop announcement , having 2 participants
+					sendEndSignal();
+				}
+				
+				if(this.getIVREndpointIdentifier()==null)
+				{
+					//initial request for first connection , prepare ivr
+					EndpointIdentifier ivrEndpointID = new EndpointIdentifier(IVR_ENDPOINT_NAME, JBOSS_BIND_ADDRESS + ":"
+						+ MGCP_PEER_PORT);
+				
+					CreateConnection createConnection = new CreateConnection(this, this.getCallIdentifier(), this.getEndpointIdentifier(), ConnectionMode.Confrnce);
+					try
+					{
+						createConnection.setSecondEndpointIdentifier(ivrEndpointID);
+					}
+					catch(Exception ex) {					
+					}
+					
+					int txID = mgcpProvider.getUniqueTransactionHandler();
+
+					createConnection.setTransactionHandle(txID);
+
+					MgcpConnectionActivity connectionActivity = null;
+
+					connectionActivity = mgcpProvider.getConnectionActivity(txID, this.getEndpointIdentifier());
+					ActivityContextInterface epnAci = mgcpAcif.getActivityContextInterface(connectionActivity);
+					epnAci.attach(sbbContext.getSbbLocalObject());
+
+					mgcpProvider.sendMgcpEvents(new JainMgcpEvent[] { createConnection });
+					logger.info("Sent CRCX: \n"+createConnection);
+				}		
 			}
+			else
+			{
+				//ivr creation response , modify connection
+				this.setIVREndpointIdentifier(event.getSecondEndpointIdentifier());
+								
+				ModifyConnection modifyConnection = new ModifyConnection(this, this.getCallIdentifier(), this.getEndpointIdentifier(),event.getSecondConnectionIdentifier());
+				int txID = mgcpProvider.getUniqueTransactionHandler();
+
+				modifyConnection.setMode(ConnectionMode.SendRecv);
+				modifyConnection.setTransactionHandle(txID);
+
+				MgcpConnectionActivity connectionActivity = null;
+
+				connectionActivity = mgcpProvider.getConnectionActivity(txID, this.getEndpointIdentifier());
+				ActivityContextInterface epnAci = mgcpAcif.getActivityContextInterface(connectionActivity);
+				epnAci.attach(sbbContext.getSbbLocalObject());
+
+				mgcpProvider.sendMgcpEvents(new JainMgcpEvent[] { modifyConnection });												
+			}			
 			break;
 		default:
-			try {
-				response = messageFactory.createResponse(Response.SERVER_INTERNAL_ERROR, request);
-				txn.sendResponse(response);
-			} catch (Exception ex) {
-				ex.printStackTrace();
+			if(request!=null)
+			{
+				try {
+					Response response = messageFactory.createResponse(Response.SERVER_INTERNAL_ERROR, request);
+					txn.sendResponse(response);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
 			}
 		}
 	}
 
+	public void onModifyConnectionResponse(ModifyConnectionResponse event, ActivityContextInterface aci) {
+		logger.info("Receive MDCX response: " + event);
+
+		//start rqnt
+		ReturnCode status = event.getReturnCode();
+
+		switch (status.getValue()) {
+			case ReturnCode.TRANSACTION_EXECUTED_NORMALLY:
+				sendRQNT(SONG, true);
+				break;
+			default:
+				logger.severe("MDCX Response returned " + status);
+		}
+	}
+	
 	public void onCallTerminated(RequestEvent evt, ActivityContextInterface aci) {
 
 		try {
@@ -285,31 +377,103 @@ public abstract class ConferenceSbb implements Sbb {
 			FromHeader from = (FromHeader) request.getHeader(FromHeader.NAME);
 			String fromURI = from.getAddress().getURI().toString();
 
-			ConnectionIdentifier connId = (ConnectionIdentifier) this.getFromVsConnIdMap().remove(fromURI);
-
-			// EndpointIdentifier endpointID = new EndpointIdentifier(ENDPOINT_NAME, JBOSS_BIND_ADDRESS+":2729");
-			EndpointIdentifier endpointID = this.getEndpointIdentifier();
-			DeleteConnection deleteConnection = new DeleteConnection(this, this.getCallIdentifier(), endpointID/*, connId*/);
-
-			deleteConnection.setTransactionHandle(this.mgcpProvider.getUniqueTransactionHandler());
-			mgcpProvider.sendMgcpEvents(new JainMgcpEvent[] { deleteConnection });
-
-			ServerTransaction tx = evt.getServerTransaction();
-
 			Response response = messageFactory.createResponse(Response.OK, request);
-			tx.sendResponse(response);
+			evt.getServerTransaction().sendResponse(response);
 
-			if (this.getFromVsConnIdMap().size() == 0) {
-				CustomEvent cutEvent = new CustomEvent(this.getEndpointIdentifier().getLocalEndpointName(), this
-						.getCallIdentifier().toString());
-				fireConferenceTerminate(cutEvent, getMgcpConnectionACI(), null);
+			if (this.getFromVsConnIdMap().size() == 1) {
+				//deleting the last one , remove all connections by call , will release all endpoints
+				EndpointIdentifier endpointID = this.getEndpointIdentifier();
+				DeleteConnection deleteConnection = new DeleteConnection(this, this.getCallIdentifier(), endpointID/*, connId*/);
+
+				deleteConnection.setTransactionHandle(this.mgcpProvider.getUniqueTransactionHandler());
+				mgcpProvider.sendMgcpEvents(new JainMgcpEvent[] { deleteConnection });
+
+				ServerTransaction tx = evt.getServerTransaction();
+				this.setEndpointIdentifier(null);
+				this.setIVREndpointIdentifier(null);
+				this.setCallIdentifier(null);			
 			}
-
+			else if(this.getFromVsConnIdMap().size() == 2) {
+				//start announcement once again
+				sendRQNT(SONG,false);
+			}
+			
+			this.getFromVsConnIdMap().remove(fromURI);
+			CustomEvent cutEvent = new CustomEvent(this.getEndpointIdentifier(),null, this.getCallIdentifier());
+			fireConferenceTerminate(cutEvent, getMgcpConnectionACI(), null);
 		} catch (Exception e) {
 			logger.severe("Error while sending DLCX", e);
 		}
 	}
 
+	private void sendEndSignal() {
+		EndpointIdentifier endpointID = this.getIVREndpointIdentifier();
+
+		NotificationRequest notificationRequest = new NotificationRequest(this, endpointID, mgcpProvider
+				.getUniqueRequestIdentifier());
+		//ConnectionIdentifier connectionIdentifier = new ConnectionIdentifier(this.getConnectionIdentifier());
+		EventName[] signalRequests = { new EventName(AUPackage.AU, AUMgcpEvent.aues
+				/*, connectionIdentifier*/) };
+		notificationRequest.setSignalRequests(signalRequests);
+
+		RequestedAction[] actions = new RequestedAction[] { RequestedAction.NotifyImmediately };
+
+		RequestedEvent[] requestedEvents = {
+				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auoc/*, connectionIdentifier*/), actions),
+				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auof/*, connectionIdentifier*/), actions) };
+
+		notificationRequest.setRequestedEvents(requestedEvents);
+		notificationRequest.setTransactionHandle(mgcpProvider.getUniqueTransactionHandler());
+
+		NotifiedEntity notifiedEntity = new NotifiedEntity(JBOSS_BIND_ADDRESS, JBOSS_BIND_ADDRESS, MGCP_PORT);
+		notificationRequest.setNotifiedEntity(notifiedEntity);		
+		mgcpProvider.sendMgcpEvents(new JainMgcpEvent[] { notificationRequest });
+
+		logger.info(" NotificationRequest sent:\n"+notificationRequest);
+	}
+	
+	private void sendRQNT(String mediaPath, boolean createActivity) {
+		EndpointIdentifier endpointID = this.getIVREndpointIdentifier();
+
+		NotificationRequest notificationRequest = new NotificationRequest(this, endpointID, mgcpProvider
+				.getUniqueRequestIdentifier());
+		//ConnectionIdentifier connectionIdentifier = new ConnectionIdentifier(this.getConnectionIdentifier());
+		EventName[] signalRequests = { new EventName(AUPackage.AU, AUMgcpEvent.aupa.withParm("an="+mediaPath)
+				/*, connectionIdentifier*/) };
+		notificationRequest.setSignalRequests(signalRequests);
+
+		RequestedAction[] actions = new RequestedAction[] { RequestedAction.NotifyImmediately };
+
+		RequestedEvent[] requestedEvents = {
+				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auoc/*, connectionIdentifier*/), actions),
+				new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auof/*, connectionIdentifier*/), actions) };
+
+		notificationRequest.setRequestedEvents(requestedEvents);
+		notificationRequest.setTransactionHandle(mgcpProvider.getUniqueTransactionHandler());
+
+		NotifiedEntity notifiedEntity = new NotifiedEntity(JBOSS_BIND_ADDRESS, JBOSS_BIND_ADDRESS, MGCP_PORT);
+		notificationRequest.setNotifiedEntity(notifiedEntity);
+
+		if (createActivity) {
+			MgcpEndpointActivity endpointActivity = null;
+			try {
+				endpointActivity = mgcpProvider.getEndpointActivity(endpointID);
+				ActivityContextInterface epnAci = mgcpAcif.getActivityContextInterface(endpointActivity);
+				epnAci.attach(sbbContext.getSbbLocalObject());
+			} catch (FactoryException ex) {
+				ex.printStackTrace();
+			} catch (NullPointerException ex) {
+				ex.printStackTrace();
+			} catch (UnrecognizedActivityException ex) {
+				ex.printStackTrace();
+			}
+		} // if (createActivity)
+
+		mgcpProvider.sendMgcpEvents(new JainMgcpEvent[] { notificationRequest });
+
+		logger.info(" NotificationRequest sent:\n"+notificationRequest);
+	}
+	
 	public abstract void fireConferenceInitiate(CustomEvent event, ActivityContextInterface aci,
 			javax.slee.Address address);
 
@@ -376,6 +540,10 @@ public abstract class ConferenceSbb implements Sbb {
 			logger.severe("Could not set SBB context:", ne);
 		}
 	}
+
+	public abstract EndpointIdentifier getIVREndpointIdentifier();
+
+	public abstract void setIVREndpointIdentifier(EndpointIdentifier endpointIdentifier);
 
 	public abstract EndpointIdentifier getEndpointIdentifier();
 

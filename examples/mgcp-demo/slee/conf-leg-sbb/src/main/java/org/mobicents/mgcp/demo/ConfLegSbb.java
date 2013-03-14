@@ -37,7 +37,9 @@ package org.mobicents.mgcp.demo;
 
 import jain.protocol.ip.mgcp.JainMgcpEvent;
 import jain.protocol.ip.mgcp.message.CreateConnection;
+import jain.protocol.ip.mgcp.message.ModifyConnection;
 import jain.protocol.ip.mgcp.message.CreateConnectionResponse;
+import jain.protocol.ip.mgcp.message.ModifyConnectionResponse;
 import jain.protocol.ip.mgcp.message.DeleteConnection;
 import jain.protocol.ip.mgcp.message.NotificationRequest;
 import jain.protocol.ip.mgcp.message.parms.CallIdentifier;
@@ -74,14 +76,13 @@ import org.mobicents.protocols.mgcp.jain.pkg.AUPackage;
 /**
  * 
  * @author amit bhayani
+ * @author yulian oifa
  */
 public abstract class ConfLegSbb implements Sbb {
 
 	public final static String ENDPOINT_NAME = "mobicents/ivr/$";
 
 	public final static String JBOSS_BIND_ADDRESS = System.getProperty("jboss.bind.address", "127.0.0.1");
-
-	public final static String SONG = "http://" + JBOSS_BIND_ADDRESS + ":8080/mgcpdemo/audio/ulaw-fashion.wav";
 
 	public static final int MGCP_PEER_PORT = 2427;
 	public static final int MGCP_PORT = 2727;
@@ -100,107 +101,25 @@ public abstract class ConfLegSbb implements Sbb {
 
 	public void onCallCreated(CustomEvent evt, ActivityContextInterface aci) {
 
-		logger.info("Custom Event received Endpoint = " + evt.getEndpointName() + " Call Id = " + evt.getCallId());
+		logger.info("Custom Event received Endpoint = " + evt.getEndpointID() + " Connection Id " + evt.getConnectionID().toString() + "Call Id = " + evt.getCallID().toString());
+		this.setEndpointIdentifier(evt.getEndpointID());
+		this.setConnectionIdentifier(evt.getConnectionID());
+		this.setCallIdentifier(evt.getCallID());
+		
 		try {
-			String endpointName = evt.getEndpointName();
-			EndpointIdentifier endpointID = new EndpointIdentifier(endpointName, JBOSS_BIND_ADDRESS + ":"
-					+ MGCP_PEER_PORT);
-
-			EndpointIdentifier ivrEndpointID = new EndpointIdentifier(ENDPOINT_NAME, JBOSS_BIND_ADDRESS + ":"
-					+ MGCP_PEER_PORT);
-
-			CallIdentifier callID = new CallIdentifier(evt.getCallId());
-			this.setCallIdentifier(callID);
-
-			CreateConnection createConnection = new CreateConnection(this, callID, endpointID, ConnectionMode.Confrnce);
-			createConnection.setSecondEndpointIdentifier(ivrEndpointID);
-
-			int txID = mgcpProvider.getUniqueTransactionHandler();
-
-			createConnection.setTransactionHandle(txID);
-
-			MgcpConnectionActivity connectionActivity = null;
-
-			connectionActivity = mgcpProvider.getConnectionActivity(txID, endpointID);
-			ActivityContextInterface epnAci = mgcpAcif.getActivityContextInterface(connectionActivity);
-			epnAci.attach(sbbContext.getSbbLocalObject());
-
-			mgcpProvider.sendMgcpEvents(new JainMgcpEvent[] { createConnection });
-			logger.info("Sent CRCX: \n"+createConnection);
+			
 		} catch (Exception e) {
 			logger.severe("Error while receiving the Custom Event ", e);
 		}
-	}
-
-	public void onCreateConnectionResponse(CreateConnectionResponse event, ActivityContextInterface aci) {
-		logger.info("Receive CRCX response: " + event);
-
-		ReturnCode status = event.getReturnCode();
-
-		switch (status.getValue()) {
-		case ReturnCode.TRANSACTION_EXECUTED_NORMALLY:
-
-			this.setEndpointIdentifier(event.getSecondEndpointIdentifier());
-			this.setConnectionIdentifier(event.getSecondConnectionIdentifier().toString());
-
-			logger.info("The IVR Connected EndpointID = " + this.getEndpointIdentifier() + " ConnectionID = "
-					+ this.getConnectionIdentifier());
-
-			sendRQNT(SONG, true);
-
-			break;
-		default:
-			logger.severe("CRCX Response returned " + status);
-		}
-	}
-
-	private void sendRQNT(String mediaPath, boolean createActivity) {
-		EndpointIdentifier endpointID = this.getEndpointIdentifier();
-
-		NotificationRequest notificationRequest = new NotificationRequest(this, endpointID, mgcpProvider
-				.getUniqueRequestIdentifier());
-		//ConnectionIdentifier connectionIdentifier = new ConnectionIdentifier(this.getConnectionIdentifier());
-		EventName[] signalRequests = { new EventName(AUPackage.AU, MgcpEvent.factory("pa").withParm("an="+mediaPath)
-				/*, connectionIdentifier*/) };
-		notificationRequest.setSignalRequests(signalRequests);
-
-		RequestedAction[] actions = new RequestedAction[] { RequestedAction.NotifyImmediately };
-
-		RequestedEvent[] requestedEvents = {
-				new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.oc/*, connectionIdentifier*/), actions),
-				new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.of/*, connectionIdentifier*/), actions) };
-
-		notificationRequest.setRequestedEvents(requestedEvents);
-		notificationRequest.setTransactionHandle(mgcpProvider.getUniqueTransactionHandler());
-
-		NotifiedEntity notifiedEntity = new NotifiedEntity(JBOSS_BIND_ADDRESS, JBOSS_BIND_ADDRESS, MGCP_PORT);
-		notificationRequest.setNotifiedEntity(notifiedEntity);
-
-		if (createActivity) {
-			MgcpEndpointActivity endpointActivity = null;
-			try {
-				endpointActivity = mgcpProvider.getEndpointActivity(endpointID);
-				ActivityContextInterface epnAci = mgcpAcif.getActivityContextInterface(endpointActivity);
-				epnAci.attach(sbbContext.getSbbLocalObject());
-			} catch (FactoryException ex) {
-				ex.printStackTrace();
-			} catch (NullPointerException ex) {
-				ex.printStackTrace();
-			} catch (UnrecognizedActivityException ex) {
-				ex.printStackTrace();
-			}
-		} // if (createActivity)
-
-		mgcpProvider.sendMgcpEvents(new JainMgcpEvent[] { notificationRequest });
-
-		logger.info(" NotificationRequest sent:\n"+notificationRequest);
-	}
+	}		
 
 	public void onCallTerminated(CustomEvent evt, ActivityContextInterface aci) {
-		logger.info("Conference Terminated " + evt.getEndpointName() + " callId = " + evt.getCallId());
+		logger.info("Conference Terminated " + this.getEndpointIdentifier() + " Connection Id " + this.getConnectionIdentifier().toString() + " callId = " + this.getCallIdentifier().toString());
 
 		EndpointIdentifier endpointID = this.getEndpointIdentifier();
-		DeleteConnection deleteConnection = new DeleteConnection(this, this.getCallIdentifier(), endpointID);
+		ConnectionIdentifier connectionID=this.getConnectionIdentifier();
+		
+		DeleteConnection deleteConnection = new DeleteConnection(this, this.getCallIdentifier(), endpointID,connectionID);
 
 		deleteConnection.setTransactionHandle(this.mgcpProvider.getUniqueTransactionHandler());
 		mgcpProvider.sendMgcpEvents(new JainMgcpEvent[] { deleteConnection });
@@ -230,10 +149,10 @@ public abstract class ConfLegSbb implements Sbb {
 
 	public abstract void setCallIdentifier(CallIdentifier callIdentifier);
 
-	public abstract String getConnectionIdentifier();
-
-	public abstract void setConnectionIdentifier(String connectionIdentifier);
-
+	public abstract ConnectionIdentifier getConnectionIdentifier();
+	
+	public abstract void setConnectionIdentifier(ConnectionIdentifier connectionIdentifier);	
+	
 	public void unsetSbbContext() {
 		this.sbbContext = null;
 		this.logger = null;

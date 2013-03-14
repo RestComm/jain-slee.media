@@ -91,6 +91,7 @@ import net.java.slee.resource.sip.DialogActivity;
 import net.java.slee.resource.sip.SipActivityContextInterfaceFactory;
 
 import org.mobicents.protocols.mgcp.jain.pkg.AUPackage;
+import org.mobicents.protocols.mgcp.jain.pkg.AUMgcpEvent;
 import org.mobicents.slee.examples.callcontrol.common.SubscriptionProfileSbb;
 import org.mobicents.slee.examples.callcontrol.profile.CallControlProfileCMP;
 
@@ -1083,20 +1084,20 @@ public abstract class VoiceMailSbb extends SubscriptionProfileSbb implements
 			if (!record) {
 
 				signalRequests = new EventName[] { new EventName(
-						AUPackage.AU, MgcpEvent.factory("pa").withParm("an="+audioFileUrl)/*,connectionID*/) };
+						AUPackage.AU, AUMgcpEvent.aupa.withParm("an="+audioFileUrl)/*,connectionID*/) };
 				
 				RequestedEvent[] requestedEvents = {
-						new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.oc/*,connectionID*/), actions),
-						new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.of/*,connectionID*/), actions), };
+						new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auoc/*,connectionID*/), actions),
+						new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auof/*,connectionID*/), actions), };
 				notificationRequest.setRequestedEvents(requestedEvents);
 								
 			} else {
-				signalRequests = new EventName[] { new EventName(AUPackage.AU, MgcpEvent.factory("pr")
+				signalRequests = new EventName[] { new EventName(AUPackage.AU, AUMgcpEvent.aupr
 						.withParm("ri="+audioFileUrl+" oa=true")/*,connectionID*/) };
 				
 				RequestedEvent[] requestedEvents = { 
-						new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.oc/*,connectionID*/), actions),
-						new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.of/*,connectionID*/), actions), };
+						new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auoc/*,connectionID*/), actions),
+						new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auof/*,connectionID*/), actions), };
 				notificationRequest.setRequestedEvents(requestedEvents);
 			}
 
@@ -1115,8 +1116,8 @@ public abstract class VoiceMailSbb extends SubscriptionProfileSbb implements
 			// previous set.
 			RequestedEvent[] requestedDtmfEvents = {
 					
-					new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.oc/* , connectionID */), actions),
-					new RequestedEvent(new EventName(AUPackage.AU, MgcpEvent.of/* , connectionID */), actions),
+					new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auoc/* , connectionID */), actions),
+					new RequestedEvent(new EventName(AUPackage.AU, AUMgcpEvent.auof/* , connectionID */), actions),
 					new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.factory("0")/* , connectionID */), actions),
 					new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.factory("1")/* , connectionID */), actions),
 					new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.factory("2")/* , connectionID */), actions),
