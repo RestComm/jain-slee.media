@@ -25,26 +25,31 @@
 		<docs.ra.dirname>mscontrol</docs.ra.dirname>
 		<docs.bookid>MsControl</docs.bookid><version.concurrent>1.3.4</version.concurrent>
         <version.concurrent>1.3.4</version.concurrent>
-        <version.mobicents.jsr309.impl>3.0.0.CR2</version.mobicents.jsr309.impl>
-        <version.mobicents.mgcp>3.0.0.CR2</version.mobicents.mgcp>
+        <version.mobicents.jsr309.impl>3.0.0.Final</version.mobicents.jsr309.impl>
+        <version.mobicents.mgcp>3.0.0.Final</version.mobicents.mgcp>
     </properties>
     <dependencyManagement>
         <dependencies>
 			<dependency>
-                        	<groupId>org.mobicents.media.client</groupId>
-	                        <artifactId>jsr-309-driver</artifactId>
-        	                <version>3.0.0.CR2</version>
-                	</dependency>
+            	<groupId>org.mobicents.media.client</groupId>
+                <artifactId>jsr-309-driver</artifactId>
+   	            <version>${version.mobicents.jsr309.impl}</version>
+           	</dependency>
+           	<dependency>
+            	<groupId>org.mobicents.media.client</groupId>
+             	<artifactId>mgcp-driver</artifactId>
+				<version>${version.mobicents.mgcp}</version>            	
+	        </dependency>
 			<dependency>
 				<groupId>org.mobicents.media.client</groupId>
 				<artifactId>mgcp-impl</artifactId>
 				<version>${version.mobicents.mgcp}</version>
 			</dependency>
 			<dependency>
-		                <groupId>org.mobicents.media</groupId>
-		                <artifactId>concurrent</artifactId>
-                		<version>${version.mobicents.mgcp}</version>
-	                </dependency>
+		        <groupId>org.mobicents.media</groupId>
+		        <artifactId>concurrent</artifactId>
+                <version>${version.mobicents.mgcp}</version>
+	        </dependency>
             <dependency>
                 <groupId>concurrent</groupId>
                 <artifactId>concurrent</artifactId>
