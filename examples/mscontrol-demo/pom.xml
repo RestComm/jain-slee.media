@@ -38,7 +38,7 @@
 			</dependency>
 			<dependency>
 				<groupId>org.mobicents.resources.mscontrol</groupId>
-				<artifactId>mobicents-slee-ra-mscontrol-ratype</artifactId>
+				<artifactId>mscontrol-ratype</artifactId>
 				<version>${mobicents.resources.mscontrol.version}</version>
 			</dependency>
 		</dependencies>
