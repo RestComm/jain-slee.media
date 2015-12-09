@@ -115,7 +115,7 @@
 					</entry>
 				</row>
 				<row>
-					<entry>NETWORK_ STREAM_FAILURE</entry>
+					<entry>NETWORK_ STREAM_ FAILURE</entry>
 					<entry>NetworkConnection</entry>
 					<entry>
 						Generated on failure in media server.
@@ -288,7 +288,7 @@
 					<entry>Generated when speed of playback changes.</entry>
 				</row>
 				<row>
-					<entry>VOLUME _CHANGED</entry>
+					<entry>VOLUME_ CHANGED</entry>
 					<entry>MediaGroup</entry>
 					<entry>Generated when volume of playback changes.</entry>
 				</row>
@@ -426,7 +426,7 @@
 			</thead>
 			<tbody>
 				<row>
-					<entry>DISCONNECTION _REQUESTED</entry>
+					<entry>DISCONNECTION_ REQUESTED</entry>
 					<entry>VxmlDialog</entry>
 					<entry>
 						Event sent by the
@@ -435,7 +435,7 @@
 					</entry>
 				</row>
 				<row>
-					<entry>ERROR _EVENT</entry>
+					<entry>ERROR_ EVENT</entry>
 					<entry>VxmlDialog</entry>
 					<entry>
 						Event indicating error condition in
@@ -545,12 +545,12 @@
 			</thead>
 			<tbody>
 				<row>
-					<entry>ACTIVE_INPUTS_CHANGED</entry>
+					<entry>ACTIVE_ INPUTS_ CHANGED</entry>
 					<entry>MediaMixer</entry>
 					<entry>The event indicates that the list of ActiveInputs has changed.</entry>
 				</row>
 				<row>
-					<entry>MOST_ACTIVE_INPUT_CHANGED</entry>
+					<entry>MOST_ ACTIVE_ INPUT_ CHANGED</entry>
 					<entry>MediaMixer</entry>
 					<entry>The event indicates that the most ActiveInput has changed.</entry>
 				</row>
@@ -612,12 +612,12 @@
 			</thead>
 			<tbody>
 				<row>
-					<entry>IRRECOVERABLE_FAILURE</entry>
+					<entry>IRRECOVERABLE_ FAILURE</entry>
 					<entry>MediaGroup, MediaMixer, NetworkConnection</entry>
 					<entry>Event sent in case of internal resource failure. Activity on which this event is fired is terminated after event is fired into SLEE.</entry>
 				</row>
 				<row>
-					<entry>ALLOCATION_CONFIRMED</entry>
+					<entry>ALLOCATION_ CONFIRMED</entry>
 					<entry>MediaGroup, MediaMixer, NetworkConnection</entry>
 					<entry>This Event is sent to signal the completion of a <methodname>ResourceContainer.confirm()</methodname>.</entry>
 				</row>
@@ -678,7 +678,7 @@
 			</thead>
 			<tbody>
 				<row>
-					<entry>FLUSH_BUFFER_COMPLETED</entry>
+					<entry>FLUSH_ BUFFER_ COMPLETED</entry>
 					<entry>MediaGroup</entry>
 					<entry>This event indicates that signal buffer has been flushed.</entry>
 				</row>
@@ -688,17 +688,17 @@
 					<entry>This event indicates that signal buffer has been over filed and no new data can be stored.</entry>
 				</row>
 				<row>
-					<entry>PATTERN_MATCHED</entry>
+					<entry>PATTERN_ MATCHED</entry>
 					<entry>MediaGroup</entry>
 					<entry>This event is fired to indicate match of <literal>DTMF</literal> pattern.</entry>
 				</row>
 				<row>
-					<entry>RECEIVE_SIGNALS_COMPLETED</entry>
+					<entry>RECEIVE_ SIGNALS_ COMPLETED</entry>
 					<entry>MediaGroup</entry>
 					<entry></entry>
 				</row>
 				<row>
-					<entry>SIGNAL_DETECTED</entry>
+					<entry>SIGNAL_ DETECTED</entry>
 					<entry>MediaGroup</entry>
 					<entry>Event indicating incoming signal.</entry>
 				</row>

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [<!ENTITY % BOOK_ENTITIES SYSTEM "../User_Guide.ent">%BOOK_ENTITIES;]>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../User_Guide.ent">
+%BOOK_ENTITIES;
+]>
 
 <section
 	id="ratype_sbb_code_examples">
@@ -33,10 +36,8 @@
 			<literal>mscAcifFactory</literal>
 			is the SIP RA Activity Context Interface Factory 
 		</para>
-		<programlisting
-			language="Java"
-			role="JAVA">
-			<![CDATA[
+		<programlisting language="Java" role="JAVA">
+<![CDATA[
 	/**
 	 * Handles the event notifying new SIP session invitation.
 	 * 
@@ -166,10 +167,8 @@
 			from example above:
 		</para>
 
-		<programlisting
-			language="Java"
-			role="JAVA">
-			<![CDATA[
+		<programlisting language="Java" role="JAVA">
+<![CDATA[
 	/**
 	 * Event with the media server generated sdp, send it back to the sip
 	 * client.

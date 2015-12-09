@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [<!ENTITY % BOOK_ENTITIES SYSTEM "../User_Guide.ent">%BOOK_ENTITIES;]>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../User_Guide.ent">
+%BOOK_ENTITIES;
+]>
 
 <section id="ratype_sbb_code_examples">
 
@@ -9,7 +12,8 @@
 	<para>The following code shows how MGCP Call Agent can send CreateConnection request to MGCP Server</para>
 	
 	
-		<programlisting language="java">
+		<programlisting language="Java" role="JAVA">
+<![CDATA[
 public abstract class IVRSbb implements Sbb {
 
 	public final static String ENDPOINT_NAME = "/mobicents/media/IVR/$";
@@ -316,9 +320,8 @@ public abstract class IVRSbb implements Sbb {
 			logger.severe("Error while sending DLCX ", e);
 		}
 	}
-
-
-}		
+}
+]]>
 		</programlisting>
 	
 </section>
