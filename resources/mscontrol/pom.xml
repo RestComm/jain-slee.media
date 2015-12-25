@@ -18,7 +18,7 @@
         <module>ratype</module>
         <module>ra</module>
         <module>du</module>
-	  <module>library</module>
+        <module>library</module>
     </modules>
     <properties>
         <docs.ra.name>MsControl</docs.ra.name>
