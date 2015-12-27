@@ -30,11 +30,14 @@ import java.util.List;
 
 public interface JainMgcpProvider extends jain.protocol.ip.mgcp.JainMgcpProvider {
 	
-	public MgcpConnectionActivity getConnectionActivity(ConnectionIdentifier connectionIdentifier, EndpointIdentifier endpointIdentifier);
+	public MgcpConnectionActivity getConnectionActivity(
+			ConnectionIdentifier connectionIdentifier, EndpointIdentifier endpointIdentifier);
 	
-	public MgcpConnectionActivity getConnectionActivity(int transactionHandle, EndpointIdentifier endpointIdentifier);
+	public MgcpConnectionActivity getConnectionActivity(
+			int transactionHandle, EndpointIdentifier endpointIdentifier);
 	
-	public List MgcpConnectionActivity getConnectionActivities(EndpointIdentifier endpointIdentifier);
+	public List MgcpConnectionActivity getConnectionActivities(
+			EndpointIdentifier endpointIdentifier);
 	
 	public MgcpEndpointActivity getEndpointActivity(EndpointIdentifier endpointIdentifier);
 	

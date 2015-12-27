@@ -33,6 +33,14 @@
               <groupId>org.mobicents.media</groupId>
               <artifactId>concurrent</artifactId>
         </dependency>
+        <dependency>
+			<groupId>javax.sip</groupId>
+			<artifactId>jain-sip-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.sip</groupId>
+			<artifactId>jain-sip-ri</artifactId>
+		</dependency>
     </dependencies>
 
 	<build>

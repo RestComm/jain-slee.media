@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [<!ENTITY % BOOK_ENTITIES SYSTEM "../User_Guide.ent">%BOOK_ENTITIES;]>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../User_Guide.ent">
+%BOOK_ENTITIES;
+]>
 
 <section id="ratype_sbb_code_examples">
 
@@ -9,7 +12,8 @@
 	<para>The following code shows how MGCP Call Agent can send CreateConnection request to MGCP Server</para>
 	
 	
-		<programlisting language="java">
+		<programlisting language="Java" role="JAVA">
+<![CDATA[
 public abstract class IVRSbb implements Sbb {
 
 	public final static String ENDPOINT_NAME = "/mobicents/media/IVR/$";
@@ -36,9 +40,11 @@ public abstract class IVRSbb implements Sbb {
 
 		CallIdentifier callID = mgcpProvider.getUniqueCallIdentifier();
 		this.setCallIdentifier(callID.toString());
-		EndpointIdentifier endpointID = new EndpointIdentifier(ENDPOINT_NAME, JBOSS_BIND_ADDRESS + ":" + MGCP_PEER_PORT);
+		EndpointIdentifier endpointID = new EndpointIdentifier(
+				ENDPOINT_NAME, JBOSS_BIND_ADDRESS + ":" + MGCP_PEER_PORT);
 
-		CreateConnection createConnection = new CreateConnection(this, callID, endpointID, ConnectionMode.SendRecv);
+		CreateConnection createConnection = new CreateConnection(
+				this, callID, endpointID, ConnectionMode.SendRecv);
 
 		try {
 			String sdp = new String(evt.getRequest().getRawContent());
@@ -53,7 +59,8 @@ public abstract class IVRSbb implements Sbb {
 		MgcpConnectionActivity connectionActivity = null;
 		try {
 			connectionActivity = mgcpProvider.getConnectionActivity(txID, endpointID);
-			ActivityContextInterface epnAci = mgcpAcif.getActivityContextInterface(connectionActivity);
+			ActivityContextInterface epnAci = 
+					mgcpAcif.getActivityContextInterface(connectionActivity);
 			epnAci.attach(sbbContext.getSbbLocalObject());
 		} catch (FactoryException ex) {
 			ex.printStackTrace();
@@ -67,7 +74,8 @@ public abstract class IVRSbb implements Sbb {
 	}
 	
 	//Received CRCX Response. Now Send RQNT for playing media file
-	public void onCreateConnectionResponse(CreateConnectionResponse event, ActivityContextInterface aci) {
+	public void onCreateConnectionResponse(
+		CreateConnectionResponse event, ActivityContextInterface aci) {
 
 		ServerTransaction txn = getServerTransaction();
 		Request request = txn.getRequest();
@@ -95,7 +103,8 @@ public abstract class IVRSbb implements Sbb {
 
 			Address contactAddress = null;
 			try {
-				contactAddress = addressFactory.createAddress("sip:" + localAddress + ":" + localPort);
+				contactAddress = addressFactory.createAddress(
+						"sip:" + localAddress + ":" + localPort);
 			} catch (ParseException ex) {
 			}
 			ContactHeader contact = headerFactory.createContactHeader(contactAddress);
@@ -104,7 +113,8 @@ public abstract class IVRSbb implements Sbb {
 
 			Response response = null;
 			try {
-				response = messageFactory.createResponse(Response.OK, request, contentType, sdp.getBytes());
+				response = messageFactory.createResponse(
+						Response.OK, request, contentType, sdp.getBytes());
 			} catch (ParseException ex) {
 				logger.severe("ParseException while trying to create OK Response", ex);
 			}
@@ -129,51 +139,72 @@ public abstract class IVRSbb implements Sbb {
 	}
 
 	private void sendRQNT(String mediaPath, boolean createActivity) {
-		EndpointIdentifier endpointID = new EndpointIdentifier(this.getEndpointName(), JBOSS_BIND_ADDRESS + ":"
-				+ MGCP_PEER_PORT);
+		EndpointIdentifier endpointID = new EndpointIdentifier(
+				this.getEndpointName(), JBOSS_BIND_ADDRESS + ":" + MGCP_PEER_PORT);
 
-		NotificationRequest notificationRequest = new NotificationRequest(this, endpointID, mgcpProvider
-				.getUniqueRequestIdentifier());
+		NotificationRequest notificationRequest = new NotificationRequest(
+				this, endpointID, mgcpProvider.getUniqueRequestIdentifier());
 		
-		ConnectionIdentifier connectionIdentifier = new ConnectionIdentifier(this.getConnectionIdentifier());
+		ConnectionIdentifier connectionIdentifier = new ConnectionIdentifier(
+				this.getConnectionIdentifier());
 		
-		EventName[] signalRequests = { new EventName(PackageName.Announcement, MgcpEvent.ann.withParm(mediaPath), connectionIdentifier) };
+		EventName[] signalRequests = { new EventName(PackageName.Announcement, 
+				MgcpEvent.ann.withParm(mediaPath), connectionIdentifier) };
 		notificationRequest.setSignalRequests(signalRequests);
 
 		RequestedAction[] actions = new RequestedAction[] { RequestedAction.NotifyImmediately };
 
 		RequestedEvent[] requestedEvents = {
-				new RequestedEvent(new EventName(PackageName.Announcement, MgcpEvent.oc, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Announcement, MgcpEvent.of, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmf0, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmf1, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmf2, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmf3, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmf4, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmf5, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmf6, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmf7, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmf8, connectionIdentifier), actions),
-
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmf9, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmfA, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmfB, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmfC, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmfD, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmfStar, connectionIdentifier), actions),
-				new RequestedEvent(new EventName(PackageName.Dtmf, MgcpEvent.dtmfHash, connectionIdentifier), actions) };
+			new RequestedEvent(new EventName(
+				PackageName.Announcement, MgcpEvent.oc, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Announcement, MgcpEvent.of, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmf0, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmf1, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmf2, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmf3, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmf4, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmf5, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmf6, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmf7, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmf8, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmf9, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmfA, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmfB, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmfC, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmfD, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmfStar, connectionIdentifier), actions),
+			new RequestedEvent(new EventName(
+				PackageName.Dtmf, MgcpEvent.dtmfHash, connectionIdentifier), actions) };
 
 		notificationRequest.setRequestedEvents(requestedEvents);
 		notificationRequest.setTransactionHandle(mgcpProvider.getUniqueTransactionHandler());
 
-		NotifiedEntity notifiedEntity = new NotifiedEntity(JBOSS_BIND_ADDRESS, JBOSS_BIND_ADDRESS, MGCP_PORT);
+		NotifiedEntity notifiedEntity = 
+				new NotifiedEntity(JBOSS_BIND_ADDRESS, JBOSS_BIND_ADDRESS, MGCP_PORT);
 		notificationRequest.setNotifiedEntity(notifiedEntity);
 
 		if (createActivity) {
 			MgcpEndpointActivity endpointActivity = null;
 			try {
 				endpointActivity = mgcpProvider.getEndpointActivity(endpointID);
-				ActivityContextInterface epnAci = mgcpAcif.getActivityContextInterface(endpointActivity);
+				ActivityContextInterface epnAci = 
+						mgcpAcif.getActivityContextInterface(endpointActivity);
 				epnAci.attach(sbbContext.getSbbLocalObject());
 			} catch (FactoryException ex) {
 				ex.printStackTrace();
@@ -189,7 +220,8 @@ public abstract class IVRSbb implements Sbb {
 		logger.info(" NotificationRequest sent");
 	}
 
-	public void onNotificationRequestResponse(NotificationRequestResponse event, ActivityContextInterface aci) {
+	public void onNotificationRequestResponse(
+		NotificationRequestResponse event, ActivityContextInterface aci) {
 		logger.info("onNotificationRequestResponse");
 
 		ReturnCode status = event.getReturnCode();
@@ -200,7 +232,8 @@ public abstract class IVRSbb implements Sbb {
 			break;
 		default:
 			ReturnCode rc = event.getReturnCode();
-			logger.severe("RQNT failed. Value = " + rc.getValue() + " Comment = " + rc.getComment());
+			logger.severe(
+				"RQNT failed. Value = " + rc.getValue() + " Comment = " + rc.getComment());
 
 			break;
 		}
@@ -299,8 +332,8 @@ public abstract class IVRSbb implements Sbb {
 	}
 
 	public void onCallTerminated(RequestEvent evt, ActivityContextInterface aci) {
-		EndpointIdentifier endpointID = new EndpointIdentifier(this.getEndpointName(), JBOSS_BIND_ADDRESS + ":"
-				+ MGCP_PEER_PORT);
+		EndpointIdentifier endpointID = new EndpointIdentifier(
+				this.getEndpointName(), JBOSS_BIND_ADDRESS + ":" + MGCP_PEER_PORT);
 		DeleteConnection deleteConnection = new DeleteConnection(this, endpointID);
 
 		deleteConnection.setTransactionHandle(mgcpProvider.getUniqueTransactionHandler());
@@ -316,9 +349,8 @@ public abstract class IVRSbb implements Sbb {
 			logger.severe("Error while sending DLCX ", e);
 		}
 	}
-
-
-}		
+}
+]]>
 		</programlisting>
 	
 </section>
