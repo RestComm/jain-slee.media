@@ -24,8 +24,14 @@
 	</modules>
 
 	<properties>
-		<restcomm.resources.sip11.version>2.6.0.FINAL</restcomm.resources.sip11.version>		
+		<!--
+		<restcomm.resources.sip11.version>2.6.0.FINAL</restcomm.resources.sip11.version>
 		<restcomm.servers.jainslee.version>2.6.0.FINAL</restcomm.servers.jainslee.version>
+		<restcomm.resources.mgcp.version>2.8.0-SNAPSHOT</restcomm.resources.mgcp.version>
+		-->
+
+		<restcomm.resources.sip11.version>2.8.11</restcomm.resources.sip11.version>
+		<restcomm.servers.jainslee.version>2.8.19</restcomm.servers.jainslee.version>
 		<restcomm.resources.mgcp.version>2.8.0-SNAPSHOT</restcomm.resources.mgcp.version>
 	</properties>
 
