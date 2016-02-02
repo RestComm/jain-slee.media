@@ -39,19 +39,19 @@
 				<row>
 			   		<entry>userAddress</entry>
 			   	    <entry>javax.slee.Address</entry>
-			   	    <!-- <entry>sip:smart_user@mobicents.org</entry>  -->
+			   	    <!-- <entry>sip:smart_user@restcomm.com</entry>  -->
 			   	    <entry>Determines <acronym>AOR</acronym>(address of record) of profile owner.</entry>
 			    </row>	    
 			    <row>
 			   		<entry>blockedAddresses</entry>
 			   	    <entry>javax.slee.Address[]</entry>
-			   	     <!-- <entry>sip:dumb@mobicents.org</entry>  -->
+			   	     <!-- <entry>sip:dumb@restcomm.com</entry>  -->
 			   	    <entry>Set of addresses blocked for profile owner. Calls originating from one of those should be blocked.</entry>
 			    </row>	    
 			    <row>
 			   		<entry>backupAddress</entry>
 			   	    <entry>javax.slee.Address</entry>
-			   	     <!-- <entry>sip:smart_user_home@mobicents.org</entry>  -->
+			   	     <!-- <entry>sip:smart_user_home@restcomm.com</entry>  -->
 			   	    <entry>Backup address to which call should be forwarded</entry>
 			    </row>	    
 			    <row>
@@ -66,7 +66,7 @@
 	<note>	
 		<para>
 		Addresses stored in profiles are <acronym>AOR</acronym>s - that is logical addresses of user present in <literal>From</literal> and <literal>To</literal> headers for instance.
-		Example <acronym>AOR</acronym> : sip:newbie@mobicents.org..
+		Example <acronym>AOR</acronym> : sip:newbie@restcomm.com..
 		</para>		
 	</note>
 	<section id="data">
@@ -95,13 +95,13 @@
 				<row>
 			   		<entry>torosvi</entry>
 			   	    <entry><para>SIP:sip:torosvi@ b127.0.0.1</para></entry>
-			   	    <entry><para>{SIP:sip:mobicents@ 127.0.0.1, SIP:sip:hugo@ 127.0.0.1}</para></entry>
+			   	    <entry><para>{SIP:sip:restcomm@ 127.0.0.1, SIP:sip:hugo@ 127.0.0.1}</para></entry>
 			   	    <entry>null</entry>
 			   	    <entry>true</entry>
 			    </row>	    
 			    	<row>
-			   		<entry>mobicents</entry>
-			   	    <entry>SIP:sip:mobicents@ 127.0.0.1</entry>
+			   		<entry>restcomm</entry>
+			   	    <entry>SIP:sip:restcomm@ 127.0.0.1</entry>
 			   	    <entry>null</entry>
 			   	    <entry>null</entry>
 			   	    <entry>false</entry>

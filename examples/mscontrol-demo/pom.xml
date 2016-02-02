@@ -5,21 +5,21 @@
 
 	<parent>
 		<groupId>org.mobicents.servers.jainslee.media</groupId>
-		<artifactId>mobicents-slee-media</artifactId>
+		<artifactId>restcomm-slee-media</artifactId>
 		<version>2.8.0-SNAPSHOT</version>
 		<relativePath>../..</relativePath>
 	</parent>
 
 	<properties>
-		<mobicents.resources.sip11.version>2.6.0.FINAL</mobicents.resources.sip11.version>
-		<mobicents.resources.mscontrol.version>${project.version}</mobicents.resources.mscontrol.version>		
+		<restcomm.resources.sip11.version>2.6.0.FINAL</restcomm.resources.sip11.version>
+		<restcomm.resources.mscontrol.version>${project.version}</restcomm.resources.mscontrol.version>		
 		<docs.example.name>MS Control Demo</docs.example.name>
 		<docs.example.dirname>mscontrol-demo</docs.example.dirname>
 		<docs.bookid>MSControlDemo</docs.bookid>
 
 	</properties>
 
-	<artifactId>mobicents-slee-example-mscontrol-demo</artifactId>
+	<artifactId>restcomm-slee-example-mscontrol-demo</artifactId>
 	<groupId>org.mobicents.examples</groupId>
 
 	<modules>
@@ -34,12 +34,12 @@
 			<dependency>
 				<groupId>org.mobicents.resources</groupId>
 				<artifactId>sip11-ratype</artifactId>
-				<version>${mobicents.resources.sip11.version}</version>
+				<version>${restcomm.resources.sip11.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.mobicents.resources.mscontrol</groupId>
 				<artifactId>mscontrol-ratype</artifactId>
-				<version>${mobicents.resources.mscontrol.version}</version>
+				<version>${restcomm.resources.mscontrol.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

@@ -8,7 +8,7 @@ package org.mobicents.mgcp.demo;
 
 public abstract class IVRSbb implements Sbb {
 
-	public final static String ENDPOINT_NAME = "/mobicents/media/IVR/$";
+	public final static String ENDPOINT_NAME = "/restcomm/media/IVR/$";
 
 	public final static String JBOSS_BIND_ADDRESS = System.getProperty("jboss.bind.address", "127.0.0.1");
 
@@ -92,10 +92,10 @@ public abstract class IVRSbb implements Sbb {
         
       	<callout arearefs="example.discard.co3">
         <para>
-                New instance of <classname>EndpointIdentifier</classname> is created. The Endpoint local name is <literal>"/mobicents/media/IVR/$"</literal>. 
+                New instance of <classname>EndpointIdentifier</classname> is created. The Endpoint local name is <literal>"/restcomm/media/IVR/$"</literal>. 
                 A term represented by a dollar sign ("$") is to be interpreted as, use any available free endpoint. 
                 Endpoint domain name is <literal>JBOSS_BIND_ADDRESS + ":" + MGCP_PEER_PORT</literal>. The MGCP Command will be delivered to MGCP Stack listening at 
-                JBOSS_BIND_ADDRESS IP Address and MGCP_PEER_PORT port. Make sure that the Mobicents Media Server is bound to same IP address as JBOSS_BIND_ADDRESS and port in mgcp-conf.xml (MGCP Configuration file in Mobicents Media Server) is same as MGCP_PEER_PORT.
+                JBOSS_BIND_ADDRESS IP Address and MGCP_PEER_PORT port. Make sure that the Restcomm Media Server is bound to same IP address as JBOSS_BIND_ADDRESS and port in mgcp-conf.xml (MGCP Configuration file in Restcomm Media Server) is same as MGCP_PEER_PORT.
                 
         </para>
         </callout>        

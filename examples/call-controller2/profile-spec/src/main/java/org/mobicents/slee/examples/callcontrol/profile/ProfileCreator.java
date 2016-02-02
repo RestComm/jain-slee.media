@@ -172,11 +172,11 @@ public class ProfileCreator {
 			
 			log.info("*** AddressProfileTable " + profileTableName + " created.");
 
-			Address[] blockedAddresses = {new Address(AddressPlan.SIP, "sip:mobicents@"+domain),new Address(AddressPlan.SIP, "sip:hugo@"+domain)};
+			Address[] blockedAddresses = {new Address(AddressPlan.SIP, "sip:restcomm@"+domain),new Address(AddressPlan.SIP, "sip:hugo@"+domain)};
 			newProfile(adaptor,sci,profileTableName, "torosvi", "sip:torosvi@"+domain, blockedAddresses, null, true, user,password);
 			log.info("********** CREATED PROFILE: torosvi **********");
 			
-			newProfile(adaptor,sci,profileTableName, "mobicents", "sip:mobicents@"+domain, null, null, false,user,password);
+			newProfile(adaptor,sci,profileTableName, "mobicents", "sip:restcomm@"+domain, null, null, false,user,password);
 			log.info("********** CREATED PROFILE: mobicents **********");
 			
 			Address backupAddress = new Address(AddressPlan.SIP, "sip:torosvi@"+domain);

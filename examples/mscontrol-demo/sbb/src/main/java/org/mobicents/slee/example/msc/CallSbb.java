@@ -54,7 +54,7 @@ public abstract class CallSbb implements Sbb {
 			"jboss.bind.address", "127.0.0.1");
 	public final static String WELCOME = "http://" + JBOSS_BIND_ADDRESS
 			+ ":8080/mscontrol/audio/RQNT-ULAW.wav";
-	public final static String ENDPOINT_NAME = "/mobicents/media/IVR/$";
+	public final static String ENDPOINT_NAME = "/restcomm/media/IVR/$";
 
 	private SbbContext sbbContext;
 	private Tracer tracer;

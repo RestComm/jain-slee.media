@@ -16,7 +16,7 @@
 			<para>start media server</para>
 		</listitem>
 		<listitem>
-			<para>set environment MOBICENTS_SLEE_EXAMPLE_CC2_RECORDINGS_HOME variable to point to absolute path to <filename>media</filename> directory of running media server.
+			<para>set environment RESTCOMM_SLEE_EXAMPLE_CC2_RECORDINGS_HOME variable to point to absolute path to <filename>media</filename> directory of running media server.
 				For instance: <filename>g:/tmp/test/tools/media-server/media</filename>
 				
 			</para>
@@ -28,7 +28,7 @@
 	<para>Setup two UAs, set proxy as ${jboss.bind.address}:5060 ( should be 127.0.0.1:5060 ). To test:</para>
 	<itemizedlist>
 		<listitem>	
-			<para>Blocking - make call either from "mobicents@127.0.0.1" or "hugo@127.0.0.1" to "torosvi@127.0.0.1"</para>
+			<para>Blocking - make call either from "restcomm@127.0.0.1" or "hugo@127.0.0.1" to "torosvi@127.0.0.1"</para>
 		</listitem>
 		<listitem>	
 			<para>Forwarding - register UA as "torosvi@127.0.0.1" and make call from any non blocked addresses to "victor@127.0.0.1"</para>

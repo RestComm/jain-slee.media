@@ -783,7 +783,7 @@ public void onNotifyRequest(Notify event, ActivityContextInterface aci) {
 			<description>
 				This is the path where the recorded files will reside.
 				it is part of record/announce path. Full path is comined as follows:
-				${MOBICENTS_SLEE_EXAMPLE_CC2_RECORDINGS_HOME}/${filesRoute}.
+				${RESTCOMM_SLEE_EXAMPLE_CC2_RECORDINGS_HOME}/${filesRoute}.
 			</description>
 			<env-entry-name>filesRoute</env-entry-name>
 			<env-entry-type>java.lang.String</env-entry-type>

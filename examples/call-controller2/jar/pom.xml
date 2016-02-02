@@ -9,11 +9,11 @@
 	</parent>
 
 	<artifactId>call-controller2-sbbs</artifactId>
-	<name>Mobicents Examples :: ${pom.artifactId}</name>
+	<name>Restcomm Examples :: ${pom.artifactId}</name>
 
 	<dependencies>
 		<dependency>
-			<artifactId>mobicents-slee-example-sip-jdbc-registrar-sbb</artifactId>
+			<artifactId>restcomm-slee-example-sip-jdbc-registrar-sbb</artifactId>
 			<groupId>org.mobicents.examples</groupId>
 		</dependency>
 		<dependency>

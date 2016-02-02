@@ -16,7 +16,7 @@
 <![CDATA[
 public abstract class IVRSbb implements Sbb {
 
-	public final static String ENDPOINT_NAME = "/mobicents/media/IVR/$";
+	public final static String ENDPOINT_NAME = "/restcomm/media/IVR/$";
 	
 	
 	//SIP Invite received. Send CRCX to MGCP Server

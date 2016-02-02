@@ -284,7 +284,7 @@ private Address getBackupAddress(String sipAddress) {
 
 		<sbb-ref>
 			<sbb-name>ProxySbb</sbb-name>
-			<sbb-vendor>mobicents</sbb-vendor>
+			<sbb-vendor>restcomm</sbb-vendor>
 			<sbb-version>1.1</sbb-version>
 			<sbb-alias>JainSipProxySbb</sbb-alias>
 		</sbb-ref>

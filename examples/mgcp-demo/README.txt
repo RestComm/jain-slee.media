@@ -1,5 +1,5 @@
 Description:
-This example is to show case the features supported by Mobicents Media Server(MMS) 2.x.y. The MMS can either be embedded in JBoss AS or can be started as standalone. Refer to MMS document to know more about this. The example is acting as Media Gateway Controller controlling the Media Gateway (Mobicents Media Server) using the industry standard protocol Media Gateway Control Protocol (MGCP - RFC 3435)
+This example is to show case the features supported by Restcomm Media Server(MMS) 2.x.y. The MMS can either be embedded in JBoss AS or can be started as standalone. Refer to MMS document to know more about this. The example is acting as Media Gateway Controller controlling the Media Gateway (Restcomm Media Server) using the industry standard protocol Media Gateway Control Protocol (MGCP - RFC 3435)
 
 Once the example is deployed and MMS is started dial following numbers to test respective functionalities.
 
@@ -9,7 +9,7 @@ Once the example is deployed and MMS is started dial following numbers to test r
 4) 2013 : This is to test the Text-to-Speech (TTS) feature of MMS. User is requested to press the DTMF and respective TTS should be played by MMS
 
 Requirements:
-This example depends on the Mobicents SIP Resource Adaptor and MGCP Resource Adaptor ensure it is installed.
+This example depends on the Restcomm SIP Resource Adaptor and MGCP Resource Adaptor ensure it is installed.
 
 Install/Uninstall:
 To install/uninstall mgcp-demo and its dependencies, use the ant script "build.xml":

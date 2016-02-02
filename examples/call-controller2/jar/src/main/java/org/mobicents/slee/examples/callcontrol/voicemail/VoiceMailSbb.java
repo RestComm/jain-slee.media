@@ -941,7 +941,7 @@ public abstract class VoiceMailSbb extends SubscriptionProfileSbb implements
 	// Pre is required since it has capability to transcode
 	public final static String PRE_ENDPOINT_NAME = "mobicents/relay/$";
 	public final static String _DEFAULT_FILE_ROUTE_ = "call-controll2";
-	public final static String _DEFAULT_RECORDINGS_HOME_="MOBICENTS_SLEE_EXAMPLE_CC2_RECORDINGS_HOME";
+	public final static String _DEFAULT_RECORDINGS_HOME_="RESTCOMM_SLEE_EXAMPLE_CC2_RECORDINGS_HOME";
 	
 	private String route = null;
 	

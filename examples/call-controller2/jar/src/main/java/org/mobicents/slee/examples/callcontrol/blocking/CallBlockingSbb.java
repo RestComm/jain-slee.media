@@ -131,7 +131,7 @@ public abstract class CallBlockingSbb extends SubscriptionProfileSbb implements
 	 * returns null if the called user (sipAddress) does not block to any user.
 	 */
 	private ArrayList getBlockedArrayList(String sipAddress) {
-		//sipAddress is AOR: sip:newbie@mobicents.org
+		//sipAddress is AOR: sip:newbie@restcomm.com
 		ArrayList uris = null;
 		CallControlProfileCMP profile = super.lookup(new Address(AddressPlan.SIP,
 				sipAddress));

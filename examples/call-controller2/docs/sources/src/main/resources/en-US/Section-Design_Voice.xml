@@ -26,7 +26,7 @@
 		<title>Box access</title>
 		<para>
 			Users accesse voice mail box by calling
-			<literal>sip:vmail@mobicents.org</literal>. 
+			<literal>sip:vmail@restcomm.com</literal>. 
 		</para>
 		<para>Flow diagram for voice mail look as follows:</para>
 		<mediaobject>
@@ -59,7 +59,7 @@
 		<title>Media path</title>
 		<para>Voice mail must create media session and establish media path in media server in order to perform its function.
 		</para>
-		<para>Media path is created in media server with <literal>connections</literal> and <literal>endpoints</literal> (for explanation of acronyms and capabilities please refer to <literal>Mobicents Media Server Documentation</literal>) </para>
+		<para>Media path is created in media server with <literal>connections</literal> and <literal>endpoints</literal> (for explanation of acronyms and capabilities please refer to <literal>Restcomm Media Server Documentation</literal>) </para>
 		<para>Path is composed as follows:</para>
 		<mediaobject>
 			<imageobject>

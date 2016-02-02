@@ -9,7 +9,7 @@
 	</parent>
 	
 	<artifactId>call-controller2-profile</artifactId>
-	<name>Mobicents Examples :: ${pom.artifactId}</name>
+	<name>Restcomm Examples :: ${pom.artifactId}</name>
 	
 	<dependencies>
 		<dependency>

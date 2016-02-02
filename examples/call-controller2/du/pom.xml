@@ -8,7 +8,7 @@
 	</parent>
 
 	<artifactId>call-controller2-DU</artifactId>
-	<name>Mobicents Examples :: ${pom.artifactId}</name>
+	<name>Restcomm Examples :: ${pom.artifactId}</name>
 
 	<dependencies>
 		

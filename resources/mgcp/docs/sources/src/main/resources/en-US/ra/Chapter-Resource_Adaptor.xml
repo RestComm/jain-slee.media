@@ -6,7 +6,7 @@
 
 	<title>Resource Adaptor Implementation</title>
 
-	<para>The RA implementation uses the Mobicents JAIN MGCP Implementation.</para>
+	<para>The RA implementation uses the Restcomm JAIN MGCP Implementation.</para>
 	
 	<xi:include
 		xmlns:xi="http://www.w3.org/2001/XInclude"

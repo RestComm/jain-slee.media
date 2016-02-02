@@ -108,7 +108,7 @@ public abstract class TTSSbb implements Sbb {
 	
 	public final static String WELCOME_ANN = "http://" + JBOSS_BIND_ADDRESS + ":8080/mgcpdemo/audio/RQNT-ULAW.wav";
 	
-	public final static String WELCOME = "Hello World. This is Mobicents Media Server Text To Speech Demo. Press any button on your touch dial phone.";
+	public final static String WELCOME = "Hello World. This is Restcomm Media Server Text To Speech Demo. Press any button on your touch dial phone.";
 	
 	private final static String DTMF_0 = "This is voice of Kevin You have pressed Zero";
 	private final static String DTMF_1 = "This is voice of Kevin Sixteen. You have pressed One";
