@@ -11,8 +11,7 @@
 	</parent>
 
 	<properties>
-		<!--<restcomm.resources.sip11.version>2.6.0.FINAL</restcomm.resources.sip11.version>-->
-		<restcomm.resources.sip11.version>2.8.11</restcomm.resources.sip11.version>
+		<restcomm.resources.sip11.version>2.8.12</restcomm.resources.sip11.version>
 		<restcomm.resources.mscontrol.version>${project.version}</restcomm.resources.mscontrol.version>		
 		<docs.example.name>MS Control Demo</docs.example.name>
 		<docs.example.dirname>mscontrol-demo</docs.example.dirname>
