@@ -24,8 +24,8 @@
 	</modules>
 
 	<properties>
-		<restcomm.servers.jainslee.version>2.8.25</restcomm.servers.jainslee.version>
-		<restcomm.resources.sip11.version>2.8.13</restcomm.resources.sip11.version>
+		<restcomm.servers.jainslee.version>2.8.27</restcomm.servers.jainslee.version>
+		<restcomm.resources.sip11.version>2.8.16</restcomm.resources.sip11.version>
 		<restcomm.resources.mgcp.version>2.8.0-SNAPSHOT</restcomm.resources.mgcp.version>
 	</properties>
 
