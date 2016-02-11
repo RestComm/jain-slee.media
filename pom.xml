@@ -12,6 +12,14 @@
 	<version>2.8.0-SNAPSHOT</version>
 			
 	<packaging>pom</packaging>
+
+	<properties>
+		<restcomm.servers.jainslee.version>2.8.27</restcomm.servers.jainslee.version>
+		<restcomm.resources.sip11.version>2.8.17</restcomm.resources.sip11.version>
+		<restcomm.resources.mgcp.version>2.8.0-SNAPSHOT</restcomm.resources.mgcp.version>
+
+		<restcomm.resources.mscontrol.version>${project.version}</restcomm.resources.mscontrol.version>
+	</properties>
 	
 	<modules>
 		<module>resources/mgcp</module>

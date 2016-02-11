@@ -13,6 +13,16 @@
     <artifactId>restcomm-slee-ra-mscontrol</artifactId>
     <groupId>org.mobicents.resources.mscontrol</groupId>
 
+    <properties>
+        <docs.ra.name>MsControl</docs.ra.name>
+        <docs.ra.dirname>mscontrol</docs.ra.dirname>
+        <docs.bookid>MsControl</docs.bookid>
+        <docs.profile>restcomm</docs.profile>
+        <version.concurrent>1.3.4</version.concurrent>
+        <version.restcomm.jsr309.impl>3.0.0.Final</version.restcomm.jsr309.impl>
+        <version.restcomm.mgcp>3.0.0.Final</version.restcomm.mgcp>
+    </properties>
+
     <modules>
         <module>events</module>
         <module>ratype</module>
@@ -20,15 +30,7 @@
         <module>du</module>
         <module>library</module>
     </modules>
-    <properties>
-        <docs.ra.name>MsControl</docs.ra.name>
-		<docs.ra.dirname>mscontrol</docs.ra.dirname>
-		<docs.bookid>MsControl</docs.bookid>
-        <docs.profile>restcomm</docs.profile>
-        <version.concurrent>1.3.4</version.concurrent>
-        <version.restcomm.jsr309.impl>3.0.0.Final</version.restcomm.jsr309.impl>
-        <version.restcomm.mgcp>3.0.0.Final</version.restcomm.mgcp>
-    </properties>
+
     <dependencyManagement>
         <dependencies>
 			<dependency>

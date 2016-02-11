@@ -13,6 +13,14 @@
 	<artifactId>call-controller2-example-parent</artifactId>
 	<groupId>org.mobicents.examples</groupId>
 
+	<!--
+	<properties>
+		<restcomm.servers.jainslee.version>2.8.27</restcomm.servers.jainslee.version>
+		<restcomm.resources.sip11.version>2.8.16</restcomm.resources.sip11.version>
+		<restcomm.resources.mgcp.version>2.8.0-SNAPSHOT</restcomm.resources.mgcp.version>
+	</properties>
+	-->
+
 	<modules>
 
 		<module>profile-spec</module>
@@ -22,12 +30,6 @@
 		
 		 -->
 	</modules>
-
-	<properties>
-		<restcomm.servers.jainslee.version>2.8.27</restcomm.servers.jainslee.version>
-		<restcomm.resources.sip11.version>2.8.16</restcomm.resources.sip11.version>
-		<restcomm.resources.mgcp.version>2.8.0-SNAPSHOT</restcomm.resources.mgcp.version>
-	</properties>
 
 	<dependencyManagement>
 	  <dependencies>
