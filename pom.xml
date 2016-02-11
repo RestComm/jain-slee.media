@@ -2,9 +2,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<groupId>org.mobicents</groupId>
-		<artifactId>restcomm-parent</artifactId>
-		<version>2.27.32</version>
+		<groupId>org.mobicents.servers.jainslee</groupId>
+		<artifactId>restcomm-slee-parent</artifactId>
+		<version>2.8.0-SNAPSHOT</version>
 	</parent>
 	
 	<groupId>org.mobicents.servers.jainslee.media</groupId>
@@ -14,11 +14,13 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<restcomm.servers.jainslee.version>2.8.27</restcomm.servers.jainslee.version>
-		<restcomm.resources.sip11.version>2.8.17</restcomm.resources.sip11.version>
-		<restcomm.resources.mgcp.version>2.8.0-SNAPSHOT</restcomm.resources.mgcp.version>
+		<restcomm.servers.jainslee.version>2.8.28</restcomm.servers.jainslee.version>
+		<restcomm.resources.sip11.version>2.8.18</restcomm.resources.sip11.version>
 
+		<!--
+		<restcomm.resources.mgcp.version>${project.version}</restcomm.resources.mgcp.version>
 		<restcomm.resources.mscontrol.version>${project.version}</restcomm.resources.mscontrol.version>
+		-->
 	</properties>
 	
 	<modules>
@@ -30,9 +32,9 @@
 	</modules>
 		
 	<scm>
-		<connection>scm:git:https://code.google.com/p/jain-slee.media/</connection>
-		<developerConnection>scm:git:https://code.google.com/p/jain-slee.media/</developerConnection>
-		<url>https://code.google.com/p/jain-slee.media/</url>
+		<connection>scm:git:https://github.com/RestComm/jain-.media.git</connection>
+		<developerConnection>scm:git:git@github.com:RestComm/jain-slee.media.git</developerConnection>
+		<url>https://github.com/RestComm/jain-slee.media</url>
 	</scm>     
 			
 	<profiles>
