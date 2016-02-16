@@ -16,11 +16,11 @@
 		<THIS.PLATFORM>Restcomm</THIS.PLATFORM>
 		<JEE.PLATFORM>JBoss Application Server</JEE.PLATFORM>
 		<THIS.ISSUE_TRACKER_URL>
-			http://code.google.com/p/jain-slee/issues/list
+			https://github.com/RestComm/jain-slee.${THIS.PACKAGE_NAME}/issues
 		</THIS.ISSUE_TRACKER_URL>
 		<THIS.PACKAGE_NAME>media</THIS.PACKAGE_NAME>
 		<THIS.SOURCE_CODE_URL>
-			https://code.google.com/p/jain-slee.${THIS.PACKAGE_NAME}/
+			https://github.com/RestComm/jain-slee.${THIS.PACKAGE_NAME}/
 		</THIS.SOURCE_CODE_URL>
 		<author.email.amit>
 			amit.bhayani (at) gmail.com

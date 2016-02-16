@@ -37,7 +37,7 @@
 		<dependency>
 			<groupId>org.mobicents.servers.jainslee.core</groupId>
 			<artifactId>common</artifactId>
-			<version>${restcomm.servers.jainslee.version}</version>
+			<version>${restcomm.jain.slee.version}</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
