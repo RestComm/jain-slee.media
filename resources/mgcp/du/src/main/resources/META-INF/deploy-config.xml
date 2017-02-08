@@ -3,7 +3,12 @@
 	<ra-entity
 		resource-adaptor-id="ResourceAdaptorID[name=MGCPResourceAdaptor,vendor=org.mobicents,version=2.0]"		
 		entity-name="MGCPRA">
-		<properties file="" />
+		<properties file="">
+			<property
+				name="jain.mgcp.IP_ADDRESS"
+				type="java.lang.String"
+				value="127.0.0.1" />
+		</properties>
 		<ra-link name="MGCPRA" />
 	</ra-entity>
 </deploy-config>
