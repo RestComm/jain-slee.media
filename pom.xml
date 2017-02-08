@@ -4,33 +4,21 @@
 	<parent>
 		<groupId>org.mobicents.servers.jainslee</groupId>
 		<artifactId>restcomm-slee-parent</artifactId>
-		<version>2.8.1</version>
+		<version>3.0.4</version>
 	</parent>
 	
 	<groupId>org.mobicents.servers.jainslee.media</groupId>
 	<artifactId>restcomm-slee-media</artifactId>
-	<version>2.8.0-SNAPSHOT</version>
+	<version>3.0.0-SNAPSHOT</version>
 			
 	<packaging>pom</packaging>
 
-	<properties>
-		<!--
-		<restcomm.jain.slee.version>2.8.28</restcomm.jain.slee.version>
-		<restcomm.resources.sip11.version>2.8.18</restcomm.resources.sip11.version>
-		-->
-		
-		<!--
-		<restcomm.resources.mgcp.version>${project.version}</restcomm.resources.mgcp.version>
-		<restcomm.resources.mscontrol.version>${project.version}</restcomm.resources.mscontrol.version>
-		-->
-	</properties>
-	
 	<modules>
 		<module>resources/mgcp</module>
 		<module>resources/mscontrol</module>
 		<module>examples/mgcp-demo</module>
 		<module>examples/mscontrol-demo</module>
-		<module>examples/call-controller2</module>
+		<!--<module>examples/call-controller2</module>-->
 	</modules>
 		
 	<scm>
