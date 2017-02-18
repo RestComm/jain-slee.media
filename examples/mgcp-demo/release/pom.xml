@@ -44,7 +44,6 @@
 								<copy overwrite="true" file="${basedir}/build.xml" todir="${release.dir}/examples/mgcp-demo">
 									<filterset>
 										<filter token="JBOSS.PATH" value="${jboss.path}" />
-										<filter token="JBOSS.CONFIG" value="${node}" />
 									</filterset>
 								</copy>
 							</tasks>
