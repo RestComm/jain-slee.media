@@ -5,15 +5,15 @@
 	<sbb id="callsbb">
 		<description>Sbb for Conference</description>
 		<sbb-name>ConferenceSbb</sbb-name>
-		<sbb-vendor>org.mobicents</sbb-vendor>
+		<sbb-vendor>org.restcomm</sbb-vendor>
 		<sbb-version>1.0</sbb-version>
 		<sbb-alias>ConferenceSbb</sbb-alias>
 
 		<sbb-classes>
 			<sbb-abstract-class>
 				<sbb-abstract-class-name>
-					org.mobicents.mgcp.demo.ConferenceSbb
-				</sbb-abstract-class-name>
+                    org.restcomm.mgcp.demo.ConferenceSbb
+                </sbb-abstract-class-name>
 				<cmp-field>
 					<cmp-field-name>endpointIdentifier</cmp-field-name>
 				</cmp-field>
@@ -80,9 +80,9 @@
 			<event-name>ConferenceInitiate</event-name>
 			<event-type-ref>
 				<event-type-name>
-					org.mobicents.mgcp.demo.events.INITIATE
+					org.restcomm.mgcp.demo.events.INITIATE
 				</event-type-name>
-				<event-type-vendor>org.mobicents</event-type-vendor>
+				<event-type-vendor>org.restcomm</event-type-vendor>
 				<event-type-version>1.0</event-type-version>
 			</event-type-ref>
 		</event>
@@ -91,9 +91,9 @@
 			<event-name>ConferenceTerminate</event-name>
 			<event-type-ref>
 				<event-type-name>
-					org.mobicents.mgcp.demo.events.TERMINATE
+					org.restcomm.mgcp.demo.events.TERMINATE
 				</event-type-name>
-				<event-type-vendor>org.mobicents</event-type-vendor>
+				<event-type-vendor>org.restcomm</event-type-vendor>
 				<event-type-version>1.0</event-type-version>
 			</event-type-ref>
 		</event>

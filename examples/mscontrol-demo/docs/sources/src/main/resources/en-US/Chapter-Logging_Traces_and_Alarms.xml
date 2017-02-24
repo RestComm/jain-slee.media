@@ -35,7 +35,7 @@
 						<entry>CallSbb</entry>
 						<entry>MS-Control-DEMO</entry>
 						<entry>
-							javax.slee.SbbNotification[service= ServiceID[ name= MsControlDemo ,vendor=org.mobicents, version=1.0], sbb=SbbID[name=CallSbb, vendor=mobicents, version=1.0]]. SubscriptionProfileSbb
+							javax.slee.SbbNotification[service= ServiceID[ name= MsControlDemo ,vendor=org.restcomm, version=1.0], sbb=SbbID[name=CallSbb, vendor=restcomm, version=1.0]]. SubscriptionProfileSbb
 						</entry>
 					</row>
 				</tbody>

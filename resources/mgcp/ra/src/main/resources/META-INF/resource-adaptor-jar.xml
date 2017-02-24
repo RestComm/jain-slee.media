@@ -7,7 +7,7 @@
 		<resource-adaptor-name>
 			MGCPResourceAdaptor
 		</resource-adaptor-name>
-		<resource-adaptor-vendor>org.mobicents</resource-adaptor-vendor>
+		<resource-adaptor-vendor>org.restcomm</resource-adaptor-vendor>
 		<resource-adaptor-version>2.0</resource-adaptor-version>
 
 		<resource-adaptor-type-ref>
@@ -31,8 +31,8 @@
 		<resource-adaptor-classes>
 			<resource-adaptor-class>
 				<resource-adaptor-class-name>
-					org.mobicents.slee.resource.mgcp.ra.MgcpResourceAdaptor
-				</resource-adaptor-class-name>
+                    org.restcomm.slee.resource.mgcp.ra.MgcpResourceAdaptor
+                </resource-adaptor-class-name>
 			</resource-adaptor-class>
 		</resource-adaptor-classes>
 		<config-property>

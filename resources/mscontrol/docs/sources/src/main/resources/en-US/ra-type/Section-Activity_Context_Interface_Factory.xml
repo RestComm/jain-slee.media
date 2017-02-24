@@ -11,7 +11,7 @@
 	<title>Activity Context Interface Factory</title>
 	<para>The
 		Resource Adaptor&apos;s Activity Context Interface Factory is of type
-		<literal> org.mobicents.slee.resource.mediacontrol.MscActivityContextInterfaceFactory</literal>
+		<literal> org.restcomm.slee.resource.mediacontrol.MscActivityContextInterfaceFactory</literal>
 		. It allows the SBB to retrieve the
 		<literal>ActivityContextInterface</literal>
 		related with a specific
@@ -20,7 +20,7 @@
 	<programlisting
 		language="Java"
 		role="JAVA">  <![CDATA[
-package org.mobicents.slee.resource.mediacontrol;
+package org.restcomm.slee.resource.mediacontrol;
 
 import javax.media.mscontrol.mediagroup.MediaGroup;
 import javax.media.mscontrol.networkconnection.NetworkConnection;

@@ -4,12 +4,12 @@
 	<profile-spec>
 		<description />
 		<profile-spec-name>CallControlProfileCMP</profile-spec-name>
-		<profile-spec-vendor>org.mobicents</profile-spec-vendor>
+		<profile-spec-vendor>org.restcomm</profile-spec-vendor>
 		<profile-spec-version>0.1</profile-spec-version>
 		
 		<profile-classes>
 			<profile-cmp-interface>
-				<profile-cmp-interface-name>org.mobicents.slee.examples.callcontrol.profile.CallControlProfileCMP</profile-cmp-interface-name>
+				<profile-cmp-interface-name>org.restcomm.slee.examples.callcontrol.profile.CallControlProfileCMP</profile-cmp-interface-name>
 				<!-- <profile-index unique="True">userAddress</profile-index>  -->
 				<cmp-field>
 				<cmp-field-name>userAddress</cmp-field-name>
@@ -17,7 +17,7 @@
 				</cmp-field>
 			</profile-cmp-interface>
 			<profile-abstract-class>
-				<profile-abstract-class-name>org.mobicents.slee.examples.callcontrol.profile.CallControlProfileManagementImpl</profile-abstract-class-name>
+				<profile-abstract-class-name>org.restcomm.slee.examples.callcontrol.profile.CallControlProfileManagementImpl</profile-abstract-class-name>
 			</profile-abstract-class>
 		</profile-classes>
 		

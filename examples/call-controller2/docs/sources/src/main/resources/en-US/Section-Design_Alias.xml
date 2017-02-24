@@ -41,7 +41,7 @@
     <sbb>
 		<description />
 		<sbb-name>CallBlockingSbb</sbb-name>
-		<sbb-vendor>org.mobicents</sbb-vendor>
+		<sbb-vendor>org.restcomm</sbb-vendor>
 		<sbb-version>0.1</sbb-version>
 
 		
@@ -50,7 +50,7 @@
 			...
 			<sbb-activity-context-interface>
 				<sbb-activity-context-interface-name>
-					org.mobicents.slee.examples.callcontrol.blocking.CallBlockingSbbActivityContextInterface
+					CallBlockingSbbActivityContextInterface
 				</sbb-activity-context-interface-name>
 			</sbb-activity-context-interface>
 		</sbb-classes>
@@ -66,7 +66,7 @@
     <sbb>
 		<description />
 		<sbb-name>CallForwardingSbb</sbb-name>
-		<sbb-vendor>org.mobicents</sbb-vendor>
+		<sbb-vendor>org.restcomm</sbb-vendor>
 		<sbb-version>0.1</sbb-version>
 
 		
@@ -75,7 +75,7 @@
 				...
 			<sbb-activity-context-interface>
 				<sbb-activity-context-interface-name>
-					org.mobicents.slee.examples.callcontrol.forwarding.CallForwardingSbbActivityContextInterface
+					CallForwardingSbbActivityContextInterface
 				</sbb-activity-context-interface-name>
 			</sbb-activity-context-interface>
 		</sbb-classes>

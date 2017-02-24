@@ -18,7 +18,7 @@
 	</para>
 	<section id="source_block_root">
 		<title>Service root</title>
-		<para>Root class of this service is <literal>org.mobicents.slee.examples.callcontrol.blocking.CallBlockingSbb</literal> </para>
+		<para>Root class of this service is <literal>CallBlockingSbb</literal> </para>
 	</section>
 	<section id="source_block_event">
 		<title>Events handlers</title>
@@ -160,13 +160,13 @@ public abstract class CallBlockingSbb extends
 	<sbb>
 		<description />
 		<sbb-name>CallBlockingSbb</sbb-name>
-		<sbb-vendor>org.mobicents</sbb-vendor>
+		<sbb-vendor>org.restcomm</sbb-vendor>
 		<sbb-version>0.1</sbb-version>
 
 		
 		<profile-spec-ref>
 			<profile-spec-name>CallControlProfileCMP</profile-spec-name>
-			<profile-spec-vendor>org.mobicents</profile-spec-vendor>
+			<profile-spec-vendor>org.restcomm</profile-spec-vendor>
 			<profile-spec-version>0.1</profile-spec-version>
 			<profile-spec-alias>CallControlProfile</profile-spec-alias>
 		</profile-spec-ref>
@@ -174,12 +174,12 @@ public abstract class CallBlockingSbb extends
 		<sbb-classes>
 			<sbb-abstract-class>
 				<sbb-abstract-class-name>
-					org.mobicents.slee.examples.callcontrol.blocking.CallBlockingSbb
+					CallBlockingSbb
 				</sbb-abstract-class-name>
 			</sbb-abstract-class>
 			<sbb-activity-context-interface>
 				<sbb-activity-context-interface-name>
-					org.mobicents.slee.examples.callcontrol.blocking.CallBlockingSbbActivityContextInterface
+					CallBlockingSbbActivityContextInterface
 				</sbb-activity-context-interface-name>
 			</sbb-activity-context-interface>
 		</sbb-classes>

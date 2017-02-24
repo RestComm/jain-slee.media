@@ -4,11 +4,11 @@
 <sbb-jar>
 	<sbb>
 		<sbb-name>CallSbb</sbb-name>
-		<sbb-vendor>org.mobicents</sbb-vendor>
+		<sbb-vendor>org.restcomm</sbb-vendor>
 		<sbb-version>1.0</sbb-version>
 		<sbb-classes>
 			<sbb-abstract-class reentrant="True">
-				<sbb-abstract-class-name>org.mobicents.slee.example.msc.CallSbb</sbb-abstract-class-name>
+				<sbb-abstract-class-name>org.restcomm.slee.example.msc.CallSbb</sbb-abstract-class-name>
 				<cmp-field>
 					<cmp-field-name>serverTransactionACI</cmp-field-name>
 				</cmp-field>
@@ -44,7 +44,7 @@
 			<event-name>AnswerGenerated</event-name>
 			<event-type-ref>
 				<event-type-name>javax.media.mscontrol.networkconnection.SdpPortManagerEvent.ANSWER_GENERATED</event-type-name>
-				<event-type-vendor>org.mobicents</event-type-vendor>
+				<event-type-vendor>org.restcomm</event-type-vendor>
 				<event-type-version>1.0</event-type-version>
 			</event-type-ref>
 		</event>
@@ -54,7 +54,7 @@
 			<event-name>StreamFailure</event-name>
 			<event-type-ref>
 				<event-type-name>javax.media.mscontrol.networkconnection.SdpPortManagerEvent.NETWORK_STREAM_FAILURE</event-type-name>
-				<event-type-vendor>org.mobicents</event-type-vendor>
+				<event-type-vendor>org.restcomm</event-type-vendor>
 				<event-type-version>1.0</event-type-version>
 			</event-type-ref>
 		</event>
@@ -65,7 +65,7 @@
 			<event-name>Joined</event-name>
 			<event-type-ref>
 				<event-type-name>javax.media.mscontrol.join.JoinEvent.JOINED</event-type-name>
-				<event-type-vendor>org.mobicents</event-type-vendor>
+				<event-type-vendor>org.restcomm</event-type-vendor>
 				<event-type-version>1.0</event-type-version>
 			</event-type-ref>
 		</event>
@@ -76,7 +76,7 @@
 			<event-name>AnnouncementCompleted</event-name>
 			<event-type-ref>
 				<event-type-name>javax.media.mscontrol.mediagroup.PlayerEvent.PLAY_COMPLETED</event-type-name>
-				<event-type-vendor>org.mobicents</event-type-vendor>
+				<event-type-vendor>org.restcomm</event-type-vendor>
 				<event-type-version>1.0</event-type-version>
 			</event-type-ref>
 		</event>
@@ -118,7 +118,7 @@
 		<resource-adaptor-type-binding>
 			<resource-adaptor-type-ref>
 				<resource-adaptor-type-name>MsControl</resource-adaptor-type-name>
-				<resource-adaptor-type-vendor>org.mobicents</resource-adaptor-type-vendor>
+				<resource-adaptor-type-vendor>org.restcomm</resource-adaptor-type-vendor>
 				<resource-adaptor-type-version>1.0</resource-adaptor-type-version>
 			</resource-adaptor-type-ref>
 			<activity-context-interface-factory-name>

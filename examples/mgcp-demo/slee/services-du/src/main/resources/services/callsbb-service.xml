@@ -4,11 +4,11 @@
 <service-xml>
 	<service>
 		<service-name>mgcp-demo</service-name>
-		<service-vendor>org.mobicents.examples</service-vendor>
+		<service-vendor>org.restcomm.examples</service-vendor>
 		<service-version>1.0</service-version>
 		<root-sbb>
 			<sbb-name>MGCPDemoCallSbb</sbb-name>
-			<sbb-vendor>org.mobicents</sbb-vendor>
+			<sbb-vendor>org.restcomm</sbb-vendor>
 			<sbb-version>1.0</sbb-version>
 		</root-sbb>
 		<default-priority>50</default-priority>

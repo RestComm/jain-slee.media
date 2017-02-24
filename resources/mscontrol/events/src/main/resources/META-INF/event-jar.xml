@@ -4,35 +4,35 @@
 	<description>Event definitions for JCC 1.1 events</description>
 	<library-ref>
 		<library-name>msc-library</library-name>
-		<library-vendor>org.mobicents.resources</library-vendor>
+		<library-vendor>org.restcomm.resources</library-vendor>
 		<library-version>1.0</library-version>
 	</library-ref>
 
 	<!-- Network connection events -->
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.networkconnection.SdpPortManagerEvent.ANSWER_GENERATED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.networkconnection.SdpPortManagerEvent</event-class-name>
 	</event-definition>
 
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.networkconnection.SdpPortManagerEvent.ANSWER_PROCESSED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.networkconnection.SdpPortManagerEvent</event-class-name>
 	</event-definition>
 
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.networkconnection.SdpPortManagerEvent.NETWORK_STREAM_FAILURE</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.networkconnection.SdpPortManagerEvent</event-class-name>
 	</event-definition>
 
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.networkconnection.SdpPortManagerEvent.OFFER_GENERATED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.networkconnection.SdpPortManagerEvent</event-class-name>
 	</event-definition>
@@ -40,14 +40,14 @@
 	<!-- Join/Unjoin Events -->
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.join.JoinEvent.JOINED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.join.JoinEvent</event-class-name>
 	</event-definition>
 
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.join.JoinEvent.UNJOINED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.join.JoinEvent</event-class-name>
 	</event-definition>
@@ -56,56 +56,56 @@
 	<!-- Media Player Events -->
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.PlayerEvent.PLAY_COMPLETED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.PlayerEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.PlayerEvent.PAUSED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.PlayerEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.PlayerEvent.RESUMED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.PlayerEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.PlayerEvent.SPEED_CHANGED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.PlayerEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.PlayerEvent.VOLUME_CHANGED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.PlayerEvent</event-class-name>
 	</event-definition>
 	<!-- Recorder Events -->
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.RecorderEvent.PAUSED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.RecorderEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.RecorderEvent.RESUMED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.RecorderEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.RecorderEvent.RECORD_COMPLETED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.RecorderEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.RecorderEvent.STARTED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.RecorderEvent</event-class-name>
 	</event-definition>
@@ -113,13 +113,13 @@
 	<!-- MIXER events -->
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mixer.MediaMixer.ACTIVE_INPUTS_CHANGED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mixer.MediaMixer</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mixer.MediaMixer.MOST_ACTIVE_INPUT_CHANGED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mixer.MediaMixer</event-class-name>
 	</event-definition>
@@ -127,37 +127,37 @@
 	<!-- VXML Dialog events -->
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.vxml.VxmlDialogEvent.DISCONNECTION_REQUESTED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.vxml.VxmlDialogEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.vxml.VxmlDialogEvent.ERROR_EVENT</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.vxml.VxmlDialogEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.vxml.VxmlDialogEvent.EXITED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.vxml.VxmlDialogEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.vxml.VxmlDialogEvent.MIDCALL_EVENT_RECEIVED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.vxml.VxmlDialogEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.vxml.VxmlDialogEvent.PREPARED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.vxml.VxmlDialogEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.vxml.VxmlDialogEvent.STARTED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.vxml.VxmlDialogEvent</event-class-name>
 	</event-definition>
@@ -165,13 +165,13 @@
 	<!-- Allocation events -->
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.resource.AllocationEvent.IRRECOVERABLE_FAILURE</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.resource.AllocationEvent</event-class-name>
 	</event-definition>
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.resource.AllocationEvent.ALLOCATION_CONFIRMED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.resource.AllocationEvent</event-class-name>
 	</event-definition>
@@ -180,42 +180,42 @@
 	
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.signals.SignalDetectorEvent.FLUSH_BUFFER_COMPLETED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.signals.SignalDetectorEvent</event-class-name>
 	</event-definition>
 	
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.signals.SignalDetectorEvent.OVERFLOWED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.signals.SignalDetectorEvent</event-class-name>
 	</event-definition>
 	
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.signals.SignalDetectorEvent.PATTERN_MATCHED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.signals.SignalDetectorEvent</event-class-name>
 	</event-definition>
 	
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.signals.SignalDetectorEvent.RECEIVE_SIGNALS_COMPLETED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.signals.SignalDetectorEvent</event-class-name>
 	</event-definition>
 	
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.signals.SignalDetectorEvent.SIGNAL_DETECTED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.signals.SignalDetectorEvent</event-class-name>
 	</event-definition>
 	<!-- Signal gen events -->
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.signals.SignalGeneratorEvent.EMIT_SIGNALS_COMPLETED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.signals.SignalGeneratorEvent</event-class-name>
 	</event-definition>
@@ -223,7 +223,7 @@
 	<!-- video -->
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.resource.video.VideoRendererEvent.RENDERING_COMPLETED</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.resource.video.VideoRendererEvent</event-class-name>
 	</event-definition>
@@ -232,7 +232,8 @@
 	
 	<event-definition>
 		<event-type-name>javax.media.mscontrol.mediagroup.signals.SpeechRecognitionEvent.SPEECH</event-type-name>
-		<event-type-vendor>org.mobicents</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
+		<event-type-vendor>org.restcomm</event-type-vendor>
 		<event-type-version>1.0</event-type-version>
 		<event-class-name>javax.media.mscontrol.mediagroup.signals.SpeechRecognitionEvent</event-class-name>
 	</event-definition>

@@ -5,25 +5,25 @@
 	<sbb id="callsbb">
 		<description>Represents the entire call</description>
 		<sbb-name>MGCPDemoCallSbb</sbb-name>
-		<sbb-vendor>org.mobicents</sbb-vendor>
+		<sbb-vendor>org.restcomm</sbb-vendor>
 		<sbb-version>1.0</sbb-version>
 		<sbb-alias>MGCPDemoCallSbb</sbb-alias>
 
 		<sbb-ref>
 			<sbb-name>RecorderSbb</sbb-name>
-			<sbb-vendor>org.mobicents</sbb-vendor>
+			<sbb-vendor>org.restcomm</sbb-vendor>
 			<sbb-version>1.0</sbb-version>
 			<sbb-alias>RecorderSbb</sbb-alias>
 		</sbb-ref>
 		<sbb-ref>
 			<sbb-name>IVRSbb</sbb-name>
-			<sbb-vendor>org.mobicents</sbb-vendor>
+			<sbb-vendor>org.restcomm</sbb-vendor>
 			<sbb-version>1.0</sbb-version>
 			<sbb-alias>IVRSbb</sbb-alias>
 		</sbb-ref>
 		<sbb-ref>
 			<sbb-name>TTSSbb</sbb-name>
-			<sbb-vendor>org.mobicents</sbb-vendor>
+			<sbb-vendor>org.restcomm</sbb-vendor>
 			<sbb-version>1.0</sbb-version>
 			<sbb-alias>TTSSbb</sbb-alias>
 		</sbb-ref>		
@@ -31,8 +31,8 @@
 		<sbb-classes>
 			<sbb-abstract-class>
 				<sbb-abstract-class-name>
-					org.mobicents.mgcp.demo.CallSbb
-				</sbb-abstract-class-name>
+                    org.restcomm.mgcp.demo.CallSbb
+                </sbb-abstract-class-name>
 				<get-child-relation-method>
 					<sbb-alias-ref>RecorderSbb</sbb-alias-ref>
 					<get-child-relation-method-name>

@@ -40,35 +40,35 @@
 						<entry>SubscriptionProfileSbb</entry>
 						<entry>SubscriptionProfileSbb</entry>
 						<entry>
-							javax.slee.SbbNotification[service= ServiceID[ name= CallBlockingService ,vendor=org.mobicents, version=0.1], sbb=SbbID[name=CallBlockingSbb, vendor=mobicents, version=1.1]]. SubscriptionProfileSbb
+							javax.slee.SbbNotification[service= ServiceID[ name= CallBlockingService ,vendor=org.restcomm, version=0.1], sbb=SbbID[name=CallBlockingSbb, vendor=restcomm, version=1.1]]. SubscriptionProfileSbb
 						</entry>
 					</row>
 					<row>
 						<entry>SubscriptionProfileSbb</entry>
 						<entry>SubscriptionProfileSbb</entry>
 						<entry>
-							javax.slee.SbbNotification[service= ServiceID[ name= CallForwardingService ,vendor=org.mobicents, version=0.1], sbb=SbbID[name=CallForwardingSbb, vendor=mobicents ,version=1.1]]. SubscriptionProfileSbb
+							javax.slee.SbbNotification[service= ServiceID[ name= CallForwardingService ,vendor=org.restcomm, version=0.1], sbb=SbbID[name=CallForwardingSbb, vendor=org.restcomm ,version=1.1]]. SubscriptionProfileSbb
 						</entry>
 					</row>
 					<row>
 						<entry>SubscriptionProfileSbb</entry>
 						<entry>SubscriptionProfileSbb</entry>
 						<entry>
-							javax.slee.SbbNotification[service= ServiceID[ name= VoiceMailService, vendor=org.mobicents, version=0.1], sbb=SbbID[name=VoiceMailSbb, vendor=mobicents ,version=1.1]]. SubscriptionProfileSbb
+							javax.slee.SbbNotification[service= ServiceID[ name= VoiceMailService, vendor=org.restcomm, version=0.1], sbb=SbbID[name=VoiceMailSbb, vendor=org.restcomm ,version=1.1]]. SubscriptionProfileSbb
 						</entry>
 					</row>
 					<row>
 						<entry>CallBlockingSbb</entry>
 						<entry>CallBlockingSbb</entry>
 						<entry>
-							javax.slee.SbbNotification[service= ServiceID[ name= CallBlockingService, vendor=org.mobicents, version=0.1], sbb=SbbID[name=CallBlockingSbb, vendor=org.mobicents ,version=0.1]]. CallBlockingSbb
+							javax.slee.SbbNotification[service= ServiceID[ name= CallBlockingService, vendor=org.restcomm, version=0.1], sbb=SbbID[name=CallBlockingSbb, vendor=org.restcomm ,version=0.1]]. CallBlockingSbb
 						</entry>
 					</row>
 					<row>
 						<entry>CallForwardingSbb</entry>
 						<entry>CallForwardingSbb</entry>
 						<entry>
-							javax.slee.SbbNotification[service= ServiceID[ name= CallForwardingService, vendor=org.mobicents, version=0.1], sbb=SbbID[name=CallForwardingSbb, vendor=org.mobicents ,version=0.1]]. CallForwardingSbb
+							javax.slee.SbbNotification[service= ServiceID[ name= CallForwardingService, vendor=org.restcomm, version=0.1], sbb=SbbID[name=CallForwardingSbb, vendor=org.restcomm ,version=0.1]]. CallForwardingSbb
 						</entry>
 
 					</row>
@@ -76,7 +76,7 @@
 						<entry>VoiceMailSbb</entry>
 						<entry>VoiceMailSbb</entry>
 						<entry>
-							javax.slee.SbbNotification[service= ServiceID[ name=VoiceMailService, vendor=org.mobicents, version=0.1], sbb=SbbID[name=VoiceMailSbb, vendor=org.mobicents ,version=0.1]]. VoiceMailSbb
+							javax.slee.SbbNotification[service= ServiceID[ name=VoiceMailService, vendor=org.restcomm, version=0.1], sbb=SbbID[name=VoiceMailSbb, vendor=org.restcomm ,version=0.1]]. VoiceMailSbb
 						</entry>
 					</row>
 				</tbody>

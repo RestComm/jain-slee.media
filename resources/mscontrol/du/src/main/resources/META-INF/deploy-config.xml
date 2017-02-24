@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy-config>
 	<ra-entity
-		resource-adaptor-id="ResourceAdaptorID[name=MsControl,vendor=org.mobicents,version=1.0]"
+		resource-adaptor-id="ResourceAdaptorID[name=MsControl,vendor=org.restcomm,version=1.0]"
 		entity-name="MSCRA">
 		<properties>
 			<property
 				name="driver.name"
 				type="java.lang.String"
-				value="org.mobicents.Driver_1.0" />
+				value="org.restcomm.Driver_1.0" />
 			<property
 				name="mgcp.bind.address"
 				type="java.lang.String"

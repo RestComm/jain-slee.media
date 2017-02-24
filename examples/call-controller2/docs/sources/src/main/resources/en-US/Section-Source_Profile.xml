@@ -44,13 +44,13 @@
 	<profile-spec>
 		<description />
 		<profile-spec-name>CallControlProfileCMP</profile-spec-name>
-		<profile-spec-vendor>org.mobicents</profile-spec-vendor>
+		<profile-spec-vendor>org.restcomm</profile-spec-vendor>
 		<profile-spec-version>0.1</profile-spec-version>
 		
 		<profile-classes>
 			<profile-cmp-interface>
 				<profile-cmp-interface-name>
-					org.mobicents.slee.examples.callcontrol.profile.CallControlProfileCMP
+					CallControlProfileCMP
 				</profile-cmp-interface-name>
 				<!-- <profile-index unique="True">userAddress</profile-index>  -->
 				<cmp-field>
@@ -60,7 +60,7 @@
 			</profile-cmp-interface>
 			<profile-abstract-class>
 				<profile-abstract-class-name>
-					org.mobicents.slee.examples.callcontrol.profile.CallControlProfileManagementImpl
+					CallControlProfileManagementImpl
 				</profile-abstract-class-name>
 			</profile-abstract-class>
 		</profile-classes>
@@ -82,7 +82,7 @@
 			It is defined as follows:
 		</para>
 		<programlisting role="JAVA" language="Java">
-package org.mobicents.slee.examples.callcontrol.profile;
+package org.restcomm.slee.examples.callcontrol.profile;
 
 import javax.slee.Address;
 

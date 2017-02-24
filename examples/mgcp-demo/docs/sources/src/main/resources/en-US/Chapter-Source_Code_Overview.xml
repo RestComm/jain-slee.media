@@ -1,8 +1,22 @@
 <?xml version='1.0'?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [<!ENTITY % BOOK_ENTITIES SYSTEM "JAIN_SLEE_Example_User_Guide.ent">%BOOK_ENTITIES;]><chapter id="source_code_overview">	<title>Source Code Overview</title>	<para>		The bellow source code is from IVRSbb, it hides SIP related		logic and highlights MGCP specific code. In case if you want to		look at complete source, please get the source code as explained		in Section 2.2.	</para>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JAIN_SLEE_Example_User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+
+<chapter id="source_code_overview">
+
+	<title>Source Code Overview</title>
+
+	<para>
+		The bellow source code is from IVRSbb, it hides SIP related
+		logic and highlights MGCP specific code. In case if you want to
+		look at complete source, please get the source code as explained
+		in Section 2.2.
+	</para>
 	
 	    <programlisting>
-package org.mobicents.mgcp.demo;
+package org.restcomm.mgcp.demo;
 
 ......
 
@@ -134,7 +148,8 @@ public abstract class IVRSbb implements Sbb {
         Finally send this <classname>CreateConnection</classname> MGCP Command to Media Gateway.
         </para>
         </callout>        
-        </calloutlist><para>
+        </calloutlist>
+<para>
 Once the MGCP command reaches Media Gateway, it replies back and MGCP RA will fire corresponding event.
 </para>
 
@@ -516,5 +531,7 @@ Once the MGCP command reaches Media Gateway, it replies back and MGCP RA will fi
         <classname>DeleteConnection</classname> command, it closes the connection and frees Endpoint from all resources allocated.
         </para>
         </callout>        
-        </calloutlist></chapter>
+        </calloutlist>
+</chapter>
+
         

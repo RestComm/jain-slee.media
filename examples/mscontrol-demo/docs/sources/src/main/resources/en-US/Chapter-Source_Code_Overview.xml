@@ -1,5 +1,8 @@
 <?xml version='1.0'?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [<!ENTITY % BOOK_ENTITIES SYSTEM "JAIN_SLEE_Example_User_Guide.ent">%BOOK_ENTITIES;]>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JAIN_SLEE_Example_User_Guide.ent">
+%BOOK_ENTITIES;
+]>
 
 <chapter
 	id="source_code_overview">
@@ -35,11 +38,11 @@
 <service-xml>
     <service>
         <service-name>MsControlDemo</service-name>
-        <service-vendor>org.mobicents</service-vendor>
+        <service-vendor>org.restcomm</service-vendor>
         <service-version>1.0</service-version>
         <root-sbb>
             <sbb-name>CallSbb</sbb-name>
-            <sbb-vendor>org.mobicents</sbb-vendor>
+            <sbb-vendor>org.restcomm</sbb-vendor>
             <sbb-version>1.0</sbb-version>
         </root-sbb>
         <default-priority>0</default-priority>
@@ -66,7 +69,7 @@
 
         <sbb-classes>
             <sbb-abstract-class>
-                <sbb-abstract-class-name>org.mobicents.slee.example.msc.CallSbb</sbb-abstract-class-name>
+                <sbb-abstract-class-name>CallSbb</sbb-abstract-class-name>
                 <cmp-field>
 					<cmp-field-name>serverTransactionACI</cmp-field-name>
 				</cmp-field>
@@ -105,7 +108,7 @@
             <event-type-ref>
                 <event-type-name>javax.media.mscontrol.networkconnection.
                 	SdpPortManagerEvent.ANSWER_GENERATED</event-type-name>
-                <event-type-vendor>org.mobicents</event-type-vendor>
+                <event-type-vendor>org.restcomm</event-type-vendor>
                 <event-type-version>1.0</event-type-version>
             </event-type-ref>
         </event>
@@ -114,7 +117,7 @@
             <event-type-ref>
                 <event-type-name>javax.media.mscontrol.networkconnection.
                 	SdpPortManagerEvent.NETWORK_STREAM_FAILURE</event-type-name>
-                <event-type-vendor>org.mobicents</event-type-vendor>
+                <event-type-vendor>org.restcomm</event-type-vendor>
                 <event-type-version>1.0</event-type-version>
             </event-type-ref>
         </event>
@@ -124,7 +127,7 @@
             <event-type-ref>
                 <event-type-name>javax.media.mscontrol.join.
                 	JoinEvent.JOINED</event-type-name>
-                <event-type-vendor>org.mobicents</event-type-vendor>
+                <event-type-vendor>org.restcomm</event-type-vendor>
                 <event-type-version>1.0</event-type-version>
             </event-type-ref>
         </event>
@@ -134,7 +137,7 @@
             <event-type-ref>
                 <event-type-name>javax.media.mscontrol.mediagroup.
                 	PlayerEvent.PLAY_COMPLETED</event-type-name>
-                <event-type-vendor>org.mobicents</event-type-vendor>
+                <event-type-vendor>org.restcomm</event-type-vendor>
                 <event-type-version>1.0</event-type-version>
             </event-type-ref>
         </event>
@@ -185,7 +188,7 @@
 					MSC-1.0-RA
                 </resource-adaptor-type-name>
                 <resource-adaptor-type-vendor>
-					org.mobicents
+					org.restcomm
                 </resource-adaptor-type-vendor>
                 <resource-adaptor-type-version>
 					1.0
@@ -214,7 +217,7 @@
 		<title>The Root SBB Abstract Class</title>
 		<para>
 			The class
-			<literal>org.mobicents.slee.example.msc.CallSbb</literal>
+			<literal>CallSbb</literal>
 			includes all the service logic for the example.
 		</para>
 

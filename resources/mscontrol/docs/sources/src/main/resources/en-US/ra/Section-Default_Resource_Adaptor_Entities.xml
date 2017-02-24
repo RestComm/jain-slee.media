@@ -28,7 +28,7 @@
         <resource-adaptor-type-binding>
 			<resource-adaptor-type-ref>
 				<resource-adaptor-type-name>MsControl</resource-adaptor-type-name>
-				<resource-adaptor-type-vendor>org.mobicents</resource-adaptor-type-vendor>
+				<resource-adaptor-type-vendor>org.restcomm</resource-adaptor-type-vendor>
 				<resource-adaptor-type-version>1.0</resource-adaptor-type-version>
 			</resource-adaptor-type-ref>
 			<activity-context-interface-factory-name>

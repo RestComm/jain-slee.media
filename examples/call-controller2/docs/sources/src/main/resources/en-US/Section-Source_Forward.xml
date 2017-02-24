@@ -24,7 +24,7 @@
 	</itemizedlist>
 	<section id="source_forward_root">
 		<title>Service root</title>
-		<para>Root class of this service is <literal>org.mobicents.slee.examples.callcontrol.forwarding.CallForwardingSbb</literal> </para>
+		<para>Root class of this service is <literal>CallForwardingSbb</literal> </para>
 	</section>
 	<section id="source_forward_event">
 		<title>Events handlers</title>
@@ -279,7 +279,7 @@ private Address getBackupAddress(String sipAddress) {
 	<sbb>
 		<description />
 		<sbb-name>CallForwardingSbb</sbb-name>
-		<sbb-vendor>org.mobicents</sbb-vendor>
+		<sbb-vendor>org.restcomm</sbb-vendor>
 		<sbb-version>0.1</sbb-version>
 
 		<sbb-ref>
@@ -290,13 +290,13 @@ private Address getBackupAddress(String sipAddress) {
 		</sbb-ref>
 		<sbb-ref>
 			<sbb-name>LocationSbb</sbb-name>
-			<sbb-vendor>org.mobicents</sbb-vendor>
+			<sbb-vendor>org.restcomm</sbb-vendor>
 			<sbb-version>1.2</sbb-version>
 			<sbb-alias>LocationSbb</sbb-alias>
 		</sbb-ref>
 		<profile-spec-ref>
 			<profile-spec-name>CallControlProfileCMP</profile-spec-name>
-			<profile-spec-vendor>org.mobicents</profile-spec-vendor>
+			<profile-spec-vendor>org.restcomm</profile-spec-vendor>
 			<profile-spec-version>0.1</profile-spec-version>
 			<profile-spec-alias>CallControlProfile</profile-spec-alias>
 		</profile-spec-ref>
@@ -304,7 +304,7 @@ private Address getBackupAddress(String sipAddress) {
 		<sbb-classes>
 			<sbb-abstract-class>
 				<sbb-abstract-class-name>
-					org.mobicents.slee.examples.callcontrol.forwarding.CallForwardingSbb
+					CallForwardingSbb
 				</sbb-abstract-class-name>
 
 				<cmp-field>
@@ -328,7 +328,7 @@ private Address getBackupAddress(String sipAddress) {
 			</sbb-abstract-class>
 			<sbb-activity-context-interface>
 				<sbb-activity-context-interface-name>
-					org.mobicents.slee.examples.callcontrol.forwarding.CallForwardingSbbActivityContextInterface
+					CallForwardingSbbActivityContextInterface
 				</sbb-activity-context-interface-name>
 			</sbb-activity-context-interface>
 		</sbb-classes>

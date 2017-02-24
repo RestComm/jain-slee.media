@@ -5,15 +5,15 @@
 	<sbb id="callsbb">
 		<description>Represents the Recorder call</description>
 		<sbb-name>RecorderSbb</sbb-name>
-		<sbb-vendor>org.mobicents</sbb-vendor>
+		<sbb-vendor>org.restcomm</sbb-vendor>
 		<sbb-version>1.0</sbb-version>
 		<sbb-alias>RecorderSbb</sbb-alias>
 
 		<sbb-classes>
 			<sbb-abstract-class>
 				<sbb-abstract-class-name>
-					org.mobicents.mgcp.demo.RecorderSbb
-				</sbb-abstract-class-name>
+                    org.restcomm.mgcp.demo.RecorderSbb
+                </sbb-abstract-class-name>
 				<cmp-field>
 					<cmp-field-name>timerID</cmp-field-name>
 				</cmp-field>

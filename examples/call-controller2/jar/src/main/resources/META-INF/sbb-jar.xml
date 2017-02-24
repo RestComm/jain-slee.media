@@ -9,20 +9,20 @@
 	<sbb>
 		<description />
 		<sbb-name>CallBlockingSbb</sbb-name>
-		<sbb-vendor>org.mobicents</sbb-vendor>
+		<sbb-vendor>org.restcomm</sbb-vendor>
 		<sbb-version>0.1</sbb-version>
 
 
 		<profile-spec-ref>
 			<profile-spec-name>CallControlProfileCMP</profile-spec-name>
-			<profile-spec-vendor>org.mobicents</profile-spec-vendor>
+			<profile-spec-vendor>org.restcomm</profile-spec-vendor>
 			<profile-spec-version>0.1</profile-spec-version>
 			<profile-spec-alias>CallControlProfile</profile-spec-alias>
 		</profile-spec-ref>
 
 		<sbb-classes>
 			<sbb-abstract-class>
-				<sbb-abstract-class-name>org.mobicents.slee.examples.callcontrol.blocking.CallBlockingSbb</sbb-abstract-class-name>
+				<sbb-abstract-class-name>org.restcomm.slee.examples.callcontrol.blocking.CallBlockingSbb</sbb-abstract-class-name>
 				<!--
 					<get-profile-cmp-method>
 					<profile-spec-alias-ref>CallControlProfile</profile-spec-alias-ref>
@@ -31,7 +31,7 @@
 				-->
 			</sbb-abstract-class>
 			<sbb-activity-context-interface>
-				<sbb-activity-context-interface-name>org.mobicents.slee.examples.callcontrol.blocking.CallBlockingSbbActivityContextInterface</sbb-activity-context-interface-name>
+				<sbb-activity-context-interface-name>org.restcomm.slee.examples.callcontrol.blocking.CallBlockingSbbActivityContextInterface</sbb-activity-context-interface-name>
 			</sbb-activity-context-interface>
 		</sbb-classes>
 
@@ -91,27 +91,27 @@
 	<sbb>
 		<description />
 		<sbb-name>CallForwardingSbb</sbb-name>
-		<sbb-vendor>org.mobicents</sbb-vendor>
+		<sbb-vendor>org.restcomm</sbb-vendor>
 		<sbb-version>0.1</sbb-version>
 
 		<sbb-ref>
 			<sbb-name>DataSourceChild</sbb-name>
-			<sbb-vendor>org.mobicents</sbb-vendor>
+			<sbb-vendor>org.restcomm</sbb-vendor>
 			<sbb-version>1.0</sbb-version>
 			<sbb-alias>LocationSbb</sbb-alias>
 		</sbb-ref>
 		
 		<profile-spec-ref>
 			<profile-spec-name>CallControlProfileCMP</profile-spec-name>
-			<profile-spec-vendor>org.mobicents</profile-spec-vendor>
+			<profile-spec-vendor>org.restcomm</profile-spec-vendor>
 			<profile-spec-version>0.1</profile-spec-version>
 			<profile-spec-alias>CallControlProfile</profile-spec-alias>
 		</profile-spec-ref>
 		<sbb-classes>
 			<sbb-abstract-class>
 				<sbb-abstract-class-name>
-					org.mobicents.slee.examples.callcontrol.forwarding.CallForwardingSbb
-				</sbb-abstract-class-name>
+                    org.restcomm.slee.examples.callcontrol.forwarding.CallForwardingSbb
+                </sbb-abstract-class-name>
 
 				<cmp-field>
 					<cmp-field-name>locationSbbCMP</cmp-field-name>
@@ -130,13 +130,13 @@
 			</sbb-abstract-class>
 			<sbb-local-interface>
 				<sbb-local-interface-name>
-					org.mobicents.slee.example.sjr.data.DataSourceParentSbbLocalObject
+					org.restcomm.slee.example.sjr.data.DataSourceParentSbbLocalObject
 				</sbb-local-interface-name>
 			</sbb-local-interface>
 			<sbb-activity-context-interface>
 				<sbb-activity-context-interface-name>
-					org.mobicents.slee.examples.callcontrol.forwarding.CallForwardingSbbActivityContextInterface
-				</sbb-activity-context-interface-name>
+                    org.restcomm.slee.examples.callcontrol.forwarding.CallForwardingSbbActivityContextInterface
+                </sbb-activity-context-interface-name>
 			</sbb-activity-context-interface>
 		</sbb-classes>
 		<address-profile-spec-alias-ref>
@@ -225,20 +225,20 @@
 	<sbb>
 		<description />
 		<sbb-name>VoiceMailSbb</sbb-name>
-		<sbb-vendor>org.mobicents</sbb-vendor>
+		<sbb-vendor>org.restcomm</sbb-vendor>
 		<sbb-version>0.1</sbb-version>
 
 		<profile-spec-ref>
 			<profile-spec-name>CallControlProfileCMP</profile-spec-name>
-			<profile-spec-vendor>org.mobicents</profile-spec-vendor>
+			<profile-spec-vendor>org.mobirestcommcents</profile-spec-vendor>
 			<profile-spec-version>0.1</profile-spec-version>
 			<profile-spec-alias>CallControlProfile</profile-spec-alias>
 		</profile-spec-ref>
 		<sbb-classes>
 			<sbb-abstract-class>
 				<sbb-abstract-class-name>
-					org.mobicents.slee.examples.callcontrol.voicemail.VoiceMailSbb
-				</sbb-abstract-class-name>
+                    org.restcomm.slee.examples.callcontrol.voicemail.VoiceMailSbb
+                </sbb-abstract-class-name>
 				<cmp-field>
 					<cmp-field-name>inviteRequest</cmp-field-name>
 				</cmp-field>
@@ -251,8 +251,8 @@
 			</sbb-abstract-class>
 			<sbb-activity-context-interface>
 				<sbb-activity-context-interface-name>
-					org.mobicents.slee.examples.callcontrol.voicemail.VoiceMailSbbActivityContextInterface
-				</sbb-activity-context-interface-name>
+                    org.restcomm.slee.examples.callcontrol.voicemail.VoiceMailSbbActivityContextInterface
+                </sbb-activity-context-interface-name>
 			</sbb-activity-context-interface>
 		</sbb-classes>
 
