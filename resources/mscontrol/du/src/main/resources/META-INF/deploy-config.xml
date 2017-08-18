@@ -7,7 +7,7 @@
 			<property
 				name="driver.name"
 				type="java.lang.String"
-				value="org.restcomm.Driver_1.0" />
+				value="org.mobicents.Driver_1.0" />
 			<property
 				name="mgcp.bind.address"
 				type="java.lang.String"

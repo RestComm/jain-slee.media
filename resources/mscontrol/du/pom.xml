@@ -34,6 +34,7 @@
         </dependency>
     </dependencies>
     <build>
+    	<finalName>restcomm-slee-ra-mscontrol-DU-${pom.version}</finalName>
         <plugins>
             <plugin>
 				<groupId>org.mobicents.tools</groupId>

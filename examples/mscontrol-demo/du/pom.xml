@@ -19,6 +19,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>restcomm-slee-example-mscontrol-demo-DU-${pom.version}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.mobicents.tools</groupId>
