@@ -106,9 +106,9 @@ public abstract class ConferenceSbb implements Sbb {
 
 	public final static String JBOSS_BIND_ADDRESS = System.getProperty("jboss.bind.address", "127.0.0.1");
 
-	public final static String ENDPOINT_NAME = "mobicents/cnf/$";
+	public final static String ENDPOINT_NAME = "restcomm/cnf/$";
 
-	public final static String IVR_ENDPOINT_NAME = "mobicents/ivr/$";
+	public final static String IVR_ENDPOINT_NAME = "restcomm/ivr/$";
 	
 	public final static String SONG = "http://" + JBOSS_BIND_ADDRESS + ":8080/mgcpdemo/audio/ulaw-fashion.wav";
 
