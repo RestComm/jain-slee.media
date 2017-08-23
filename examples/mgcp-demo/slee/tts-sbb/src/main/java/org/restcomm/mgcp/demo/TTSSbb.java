@@ -102,7 +102,7 @@ import net.java.slee.resource.sip.SleeSipProvider;
  */
 public abstract class TTSSbb implements Sbb {
 
-	public final static String ENDPOINT_NAME = "restcomm/ivr/$";
+	public final static String ENDPOINT_NAME = "mobicents/ivr/$";
 
 	public final static String JBOSS_BIND_ADDRESS = System.getProperty("jboss.bind.address", "127.0.0.1");
 	

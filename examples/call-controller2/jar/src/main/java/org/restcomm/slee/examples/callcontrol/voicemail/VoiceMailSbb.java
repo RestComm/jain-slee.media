@@ -937,9 +937,9 @@ public abstract class VoiceMailSbb extends SubscriptionProfileSbb implements
 
 	private final String WAV_EXT = ".wav";
 
-	public final static String IVR_ENDPOINT_NAME = "restcomm/ivr/$";
+	public final static String IVR_ENDPOINT_NAME = "mobicents/ivr/$";
 	// Pre is required since it has capability to transcode
-	public final static String BRIDGE_ENDPOINT_NAME = "restcomm/bridge/$";
+	public final static String BRIDGE_ENDPOINT_NAME = "mobicents/bridge/$";
 	public final static String _DEFAULT_FILE_ROUTE_ = "call-controll2";
 	public final static String _DEFAULT_RECORDINGS_HOME_="RESTCOMM_SLEE_EXAMPLE_CC2_RECORDINGS_HOME";
 	
