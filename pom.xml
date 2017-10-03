@@ -23,6 +23,7 @@
 		<restcomm.resources.mgcp.version>${project.version}</restcomm.resources.mgcp.version>
 		<restcomm.resources.mscontrol.version>${project.version}</restcomm.resources.mscontrol.version>
 		-->
+		<restcomm.resources.sip11.version>2.9.97</restcomm.resources.sip11.version>
 	</properties>
 	
 	<modules>
