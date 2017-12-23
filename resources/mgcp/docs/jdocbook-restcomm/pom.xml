@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>restcomm-slee-ra-mgcp-docs</artifactId>
 		<groupId>org.mobicents.resources</groupId>
-		<version>7.0.0-SNAPSHOT</version>
+		<version>7.2.0-101</version>
 	</parent>
 
 	<artifactId>
